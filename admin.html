@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b12">
+<title>HSBC OWT | Admin Panel</title>
+
+<style>
+:root {
+  --bg:#090b12;
+  --panel:#141824;
+  --gold:#d7b75e;
+  --text:#f5f5f5;
+  --muted:#9ba3b5;
+  --line:#30364a;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+}
+header {
+  padding:20px;
+  border-bottom:1px solid var(--line);
+  background:#101522;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.brand { color:var(--gold); font-weight:bold; font-size:19px; }
+.container { max-width:1100px; margin:auto; padding:20px; }
+.panel {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:18px;
+}
+h1,h2 { margin-top:0; }
+h1 { font-size:25px; }
+h2 { font-size:19px; color:var(--gold); }
+label {
+  display:block;
+  color:var(--muted);
+  margin:13px 0 7px;
+  font-size:14px;
+}
+input {
+  width:100%;
+  padding:13px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#090e19;
+  color:white;
+  font-size:16px;
+}
+button {
+  padding:12px 17px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#20283a;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+}
+button.gold {
+  background:var(--gold);
+  color:#17130a;
+  border-color:var(--gold);
+  font-weight:bold;
+}
+button.danger {
+  background:#4b2028;
+  border-color:#8b3542;
+}
+button:disabled { opacity:.5; }
+.actions {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+.hidden { display:none !important; }
+.muted { color:var(--muted); }
+.status {
+  padding:12px;
+  border-radius:8px;
+  margin:12px 0;
+  background:#182b26;
+  color:#8be0b6;
+  overflow-wrap:anywhere;
+}
+.status.error {
+  background:#3a2025;
+  color:#ff9c9c;
+}
+.player {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+.player:last-child { border:0; }
+.flag {
+  width:40px;
+  height:27px;
+  object-fit:cover;
+  border:1px solid #555;
+  border-radius:3px;
+  flex-shrink:0;
+}
+.flag-code {
+  width:40px;
+  font-size:11px;
+  color:var(--gold);
+  text-align:center;
+}
+.avatar {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#30364a;
+}
+.player-info { flex:1; min-width:0; }
+.player-info strong { display:block; }
+.player-info small { color:var(--muted); }
+.player-buttons { display:flex; gap:6px; }
+.player-buttons button { padding:9px; }
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.search-row {
+  display:flex;
+  gap:10px;
+  margin-bottom:12px;
+}
+.search-row input { flex:1; min-width:0; }
+.checkbox {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+}
+.checkbox input { width:20px; }
+footer {
+  text-align:center;
+  color:var(--muted);
+  padding:25px;
+  font-size:12px;
+}
+@media(max-width:600px) {
+  .container { padding:12px; }
+  .grid { grid-template-columns:1fr; }
+  .player { flex-wrap:wrap; }
+  .player-buttons { width:100%; }
+  .player-buttons button { flex:1; }
+  header { padding:15px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <div class="brand">HSBC OCEAN WORLD TOUR</div>
+    <small class="muted">OFFICIAL ADMIN PANEL</small>
+  </div>
+  <button id="logoutBtn" class="hidden">ออกจากระบบ</button>
+</header>
+
+<main class="container">
+
+<!-- LOGIN -->
+<section id="loginPanel" class="panel">
+  <h1>ADMIN LOGIN</h1>
+  <p class="muted">เข้าสู่ระบบจัดการข้อมูลนักกีฬา OWT</p>
+
+  <form id="loginForm">
+    <label>Email</label>
+    <input id="email" type="email" required
+      autocomplete="username" placeholder="Admin Email">
+
+    <label>Password</label>
+    <input id="password" type="password" required
+      autocomplete="current-password" placeholder="Password">
+
+    <div class="actions">
+      <button class="gold" type="submit">เข้าสู่ระบบ</button>
+    </div>
+  </form>
+  <div id="loginMessage"></div>
+</section>
+
+<!-- ADMIN -->
+<section id="adminPanel" class="hidden">
+
+  <div class="panel">
+    <h1>PLAYER MANAGEMENT</h1>
+    <p class="muted">จัดการนักกีฬา Ocean World Tour</p>
+    <div id="accountInfo" class="muted"></div>
+    <div id="message"></div>
+  </div>
+
+  <!-- PLAYER FORM -->
+  <div class="panel">
+    <h2 id="formTitle">เพิ่มนักกีฬาใหม่</h2>
+
+    <form id="playerForm">
+      <label>ชื่อนักกีฬา</label>
+      <input id="playerName" required
+        placeholder="Player Name">
+
+      <div class="grid">
+        <div>
+          <label>Country Code (ISO Alpha-3)</label>
+          <input id="countryCode" required
+            maxlength="3" placeholder="THA">
+        </div>
+        <div>
+          <label>ประเทศ</label>
+          <input id="countryName" required
+            placeholder="Thailand">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+          <label>Seed</label>
+          <input id="seed" type="number" min="1"
+            placeholder="1">
+        </div>
+        <div>
+          <label>รูปโปรไฟล์ URL</label>
+          <input id="portraitUrl" type="url"
+            placeholder="https://...">
+        </div>
+      </div>
+
+      <label class="checkbox">
+        <input id="isActive" type="checkbox" checked>
+        <span>นักกีฬายัง Active</span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="gold" id="saveBtn">
+          บันทึกข้อมูล
+        </button>
+        <button type="button" id="cancelBtn">
+          ยกเลิก
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- PLAYER LIST -->
+  <div class="panel">
+    <h2>PLAYER ROSTER</h2>
+    <div class="search-row">
+      <input id="search" placeholder="ค้นหาชื่อนักกีฬา...">
+      <button id="refreshBtn">รีเฟรช</button>
+    </div>
+    <div id="playerCount" class="muted"></div>
+    <div id="playerList"></div>
+  </div>
+
+</section>
+</main>
+
+<footer>
+  HSBC OCEAN WORLD TOUR · OFFICIAL MANAGEMENT SYSTEM
+  <br>Fantasy / Simulated Tournament
+</footer>
+
+<script type="module">
+import { createClient }
+from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+/* SUPABASE CONNECTION */
+const SUPABASE_URL =
+  "https://soezkybqsrjgqbyxokdk.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_65ASq1FDolpTAu3b8LDAgg_G5cNLYQ9";
+
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+/* COUNTRY FLAG SVG MAP */
+const flags = {
+  THA:"th",
+  DEN:"dk",
+  FRA:"fr",
+  CHN:"cn",
+  MAS:"my",
+  INA:"id",
+  JPN:"jp",
+  SGP:"sg",
+  TPE:"tw",
+  IND:"in",
+  KOR:"kr",
+  HKG:"hk"
+};
+
+const $ = id => document.getElementById(id);
+
+let players = [];
+let editingId = null;
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[c]);
+}
+
+function safeURL(value) {
+  try {
+    const u = new URL(value);
+    return ["https:","http:"].includes(u.protocol)
+      ? u.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function showMessage(message, error=false) {
+  $("message").className = error
+    ? "status error" : "status";
+  $("message").textContent = message;
+}
+
+function showLogin() {
+  $("loginPanel").classList.remove("hidden");
+  $("adminPanel").classList.add("hidden");
+  $("logoutBtn").classList.add("hidden");
+}
+
+async function showAdmin(session) {
+  $("loginPanel").classList.add("hidden");
+  $("adminPanel").classList.remove("hidden");
+  $("logoutBtn").classList.remove("hidden");
+  $("accountInfo").textContent =
+    "เข้าสู่ระบบด้วย: " + session.user.email;
+  await loadPlayers();
+}
+
+/* AUTHENTICATION */
+$("loginForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  const btn = e.submitter;
+  btn.disabled = true;
+  $("loginMessage").textContent = "กำลังเข้าสู่ระบบ...";
+
+  try {
+    const {data,error} =
+      await supabase.auth.signInWithPassword({
+        email:$("email").value.trim(),
+        password:$("password").value
+      });
+
+    if(error) throw error;
+
+    await showAdmin(data.session);
+    $("loginMessage").textContent = "";
+
+  } catch(err) {
+    $("loginMessage").className = "status error";
+    $("loginMessage").textContent = err.message;
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+$("logoutBtn").addEventListener("click", async () => {
+  const {error} = await supabase.auth.signOut();
+  if(error) {
+    showMessage(error.message,true);
+    return;
+  }
+  showLogin();
+});
+
+supabase.auth.onAuthStateChange((_event, session) => {
+  if(session) {
+    showAdmin(session).catch(err =>
+      showMessage(err.message,true)
+    );
+  } else {
+    showLogin();
+  }
+});
+
+/* LOAD PLAYERS */
+async function loadPlayers() {
+  showMessage("กำลังโหลดข้อมูลนักกีฬา...");
+
+  const {data,error} = await supabase
+    .from("owt_players")
+    .select("id,seed,display_name,country_code,country_name,is_active,portrait_url")
+    .order("seed",{ascending:true,nullsFirst:false});
+
+  if(error) {
+    showMessage(error.message,true);
+    return;
+  }
+
+  players = data || [];
+  renderPlayers();
+  $("message").textContent = "";
+}
+
+/* FLAG AND PLAYER DISPLAY */
+function flagHTML(code) {
+  const country = flags[String(code || "").toUpperCase()];
+
+  if(!country) {
+    return `<span class="flag-code">${escapeHTML(code || "---")}</span>`;
+  }
+
+  return `<img class="flag"
+    src="https://flagcdn.com/${country}.svg"
+    alt="${escapeHTML(code)}"
+    loading="lazy">`;
+}
+
+function renderPlayers() {
+  const query = $("search").value.toLowerCase().trim();
+
+  const filtered = players.filter(p =>
+    [
+      p.display_name,
+      p.country_name,
+      p.country_code
+    ].join(" ").toLowerCase().includes(query)
+  );
+
+  $("playerCount").textContent =
+    `แสดง ${filtered.length} จาก ${players.length} คน`;
+
+  $("playerList").innerHTML = filtered.map(p => {
+    const photo = safeURL(p.portrait_url);
+
+    return `
+      <div class="player">
+        ${flagHTML(p.country_code)}
+        <img class="avatar"
+          src="${photo || "https://placehold.co/100x100/30364a/ffffff?text=OWT"}"
+          alt=""
+          loading="lazy">
+        <div class="player-info">
+          <strong>${escapeHTML(p.display_name)}</strong>
+          <small>
+            ${escapeHTML(p.country_name)}
+            · ${escapeHTML(p.country_code)}
+            · Seed ${p.seed ?? "-"}
+            · ${p.is_active ? "ACTIVE" : "INACTIVE"}
+          </small>
+        </div>
+        <div class="player-buttons">
+          <button data-action="edit"
+            data-id="${escapeHTML(p.id)}">แก้ไข</button>
+          <button class="danger"
+            data-action="delete"
+            data-id="${escapeHTML(p.id)}">ลบ</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  if(filtered.length === 0) {
+    $("playerList").innerHTML =
+      '<p class="muted">ไม่พบรายชื่อนักกีฬา</p>';
+  }
+}
+
+/* RESET FORM */
+function resetForm() {
+  editingId = null;
+  $("playerForm").reset();
+  $("isActive").checked = true;
+  $("formTitle").textContent = "เพิ่มนักกีฬาใหม่";
+  $("saveBtn").textContent = "บันทึกข้อมูล";
+}
+
+/* EDIT PLAYER */
+function editPlayer(id) {
+  const p = players.find(x => x.id === id);
+  if(!p) return;
+
+  editingId = id;
+
+  $("playerName").value = p.display_name || "";
+  $("countryCode").value = p.country_code || "";
+  $("countryName").value = p.country_name || "";
+  $("seed").value = p.seed ?? "";
+  $("portraitUrl").value = p.portrait_url || "";
+  $("isActive").checked = p.is_active;
+
+  $("formTitle").textContent = "แก้ไขข้อมูลนักกีฬา";
+  $("saveBtn").textContent = "บันทึกการแก้ไข";
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* SAVE PLAYER */
+$("playerForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  const btn = $("saveBtn");
+  btn.disabled = true;
+
+  const code = $("countryCode").value.trim().toUpperCase();
+
+  if(!/^[A-Z]{3}$/.test(code)) {
+    showMessage("กรุณากรอกรหัสประเทศ 3 ตัวอักษร เช่น THA",true);
+    btn.disabled = false;
+    return;
+  }
+
+  const portrait = $("portraitUrl").value.trim();
+
+  const payload = {
+    display_name:$("playerName").value.trim(),
+    country_code:code,
+    country_name:$("countryName").value.trim(),
+    seed:$("seed").value === "" ? null : Number($("seed").value),
+    portrait_url:portrait || null,
+    is_active:$("isActive").checked
+  };
+
+  try {
+    let result;
+
+    if(editingId) {
+      result = await supabase
+        .from("owt_players")
+        .update(payload)
+        .eq("id",editingId);
+    } else {
+      result = await supabase
+        .from("owt_players")
+        .insert(payload);
+    }
+
+    if(result.error) throw result.error;
+
+    showMessage(editingId
+      ? "แก้ไขข้อมูลสำเร็จ"
+      : "เพิ่มนักกีฬาสำเร็จ");
+
+    resetForm();
+    await loadPlayers();
+
+  } catch(err) {
+    showMessage(err.message,true);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* EDIT / DELETE BUTTONS */
+$("playerList").addEventListener("click", async e => {
+  const button = e.target.closest("button[data-action]");
+  if(!button) return;
+
+  const id = button.dataset.id;
+
+  if(button.dataset.action === "edit") {
+    editPlayer(id);
+  }
+
+  if(button.dataset.action === "delete") {
+    const player = players.find(p => p.id === id);
+    if(!player) return;
+
+    if(!confirm(
+      `ยืนยันลบนักกีฬา ${player.display_name} ใช่หรือไม่?`
+    )) return;
+
+    try {
+      const {error} = await supabase
+        .from("owt_players")
+        .delete()
+        .eq("id",id);
+
+      if(error) throw error;
+
+      showMessage("ลบนักกีฬาสำเร็จ");
+      await loadPlayers();
+
+    } catch(err) {
+      showMessage(err.message,true);
+    }
+  }
+});
+
+/* SEARCH / REFRESH / CANCEL */
+$("search").addEventListener("input",renderPlayers);
+
+$("refreshBtn").addEventListener("click",loadPlayers);
+
+$("cancelBtn").addEventListener("click",resetForm);
+
+/* INITIAL SESSION CHECK */
+const {data:{session}} = await supabase.auth.getSession();
+
+if(session) {
+  await showAdmin(session);
+} else {
+  showLogin();
+}
+</script>
+
+</body>
+</html>
