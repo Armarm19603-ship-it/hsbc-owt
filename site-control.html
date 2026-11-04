@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020"><title>OWT WEBSITE CONTROL</title>
+<style>
+:root{--bg:#090d18;--panel:#151c2d;--line:#303b52;--gold:#e1c16b;--gold2:#f3dda0;--text:#f6f4ef;--muted:#a8b1c2;--green:#48c99a;--red:#ff8c9c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#342b50 0,#101729 42%,var(--bg) 78%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1000px;margin:auto;padding:20px 15px 40px}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px}.brand{color:var(--gold);font-weight:900;letter-spacing:1px}.status{font-size:11px;border:1px solid var(--line);padding:8px 11px;border-radius:20px;color:var(--muted)}h1{font-size:clamp(24px,5vw,36px);margin:24px 0 5px}.sub,.note{color:var(--muted);font-size:13px;line-height:1.65}.card{background:linear-gradient(145deg,#1a2335,#111827);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}.card h2{font-size:15px;color:var(--gold2);margin:0 0 14px}.switch-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.switch{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#0c1423;border:1px solid #344158;border-radius:12px;padding:13px}.switch span{font-size:13px;line-height:1.4}.switch small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.switch input{width:22px;height:22px;accent-color:#d8b66a;flex:0 0 auto}.field{width:100%;background:#0a1120;color:white;border:1px solid #3b4962;border-radius:10px;padding:12px;font:inherit}.field:focus{outline:2px solid #d8b66a}.field-label{display:block;color:#c8d0dd;font-size:12px;margin:14px 0 7px}.actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid var(--line);border-radius:10px;padding:12px 17px;font-weight:800;cursor:pointer}.gold{background:linear-gradient(100deg,#c5a14e,#f0d993);border:0;color:#171717}.secondary{background:#222c40;color:#f5f5f5}.message{margin-top:12px;padding:12px;border-radius:10px;background:#0b1423;color:var(--muted);font-size:12px;line-height:1.5}.message.ok{color:#8de4bc;border:1px solid #48c99555}.message.error{color:#ffd2da;border:1px solid #804252}.preview{border:1px dashed #8b7543;border-radius:12px;padding:14px;margin-top:12px}.preview b{display:block;color:var(--gold2);margin-bottom:6px}.preview p{margin:0;color:#c6cfdd;font-size:12px;white-space:pre-wrap;line-height:1.6}
+@media(max-width:600px){.switch-list{grid-template-columns:1fr}.wrap{padding:13px 10px 30px}.card{padding:14px}}
+</style></head>
+<body><div class="wrap">
+<div class="head"><div><div class="brand">OCEAN WORLD TOUR</div><div class="note">OFFICIAL WEBSITE CONTROL</div></div><div class="status" id="status">CHECKING ADMIN SESSION…</div></div>
+<h1>Website Control</h1><p class="sub">จัดการการเผยแพร่หน้าเว็บไซต์ OWT และประกาศข่าวจากศูนย์ควบคุมกลาง การเปลี่ยนแปลงมีผลกับหน้า Official Website โดยไม่ลบข้อมูลในฐานข้อมูล</p>
+<div class="card"><h2>สถานะเว็บไซต์</h2><div class="switch-list">
+<label class="switch"><span><b>เปิดเว็บไซต์สาธารณะ</b><small>ปิดเพื่อแสดงหน้าปิดปรับปรุงแก่ผู้เข้าชม</small></span><input id="site_enabled" type="checkbox"></label>
+</div></div>
+<div class="card"><h2>เลือกส่วนที่ต้องการเผยแพร่</h2><div class="switch-list">
+<label class="switch"><span>รายชื่อนักกีฬา<small>Player profiles และข้อมูลนักกีฬา</small></span><input id="show_players" type="checkbox"></label>
+<label class="switch"><span>รายการแข่งขัน<small>Tournaments และรายการเด่นหน้าแรก</small></span><input id="show_tournaments" type="checkbox"></label>
+<label class="switch"><span>ผลการแข่งขัน<small>Match Results และคะแนนแต่ละแมตช์</small></span><input id="show_results" type="checkbox"></label>
+<label class="switch"><span>ตารางอันดับ<small>OWT World Rankings</small></span><input id="show_rankings" type="checkbox"></label>
+<label class="switch"><span>สายการแข่งขัน<small>Official Draw และ Bracket</small></span><input id="show_draw" type="checkbox"></label>
+</div></div>
+<div class="card"><h2>ประกาศหน้าเว็บไซต์</h2>
+<label class="switch"><span>แสดงประกาศบนเว็บไซต์<small>เปิดเพื่อแสดงแถบประกาศด้านบนหน้าเว็บ</small></span><input id="announcement_enabled" type="checkbox"></label>
+<label class="field-label" for="announcement_title">หัวข้อประกาศ (ไม่เกิน 120 ตัวอักษร)</label><input class="field" id="announcement_title" maxlength="120" placeholder="เช่น OWT Thailand Open 2027">
+<label class="field-label" for="announcement_body">รายละเอียดประกาศ (ไม่เกิน 500 ตัวอักษร)</label><textarea class="field" id="announcement_body" rows="4" maxlength="500" placeholder="พิมพ์รายละเอียดประกาศที่ต้องการให้ผู้เข้าชมเห็น"></textarea>
+<div class="preview"><b id="previewTitle">ตัวอย่างประกาศ</b><p id="previewBody">ข้อความประกาศจะแสดงที่นี่</p></div>
+</div>
+<div class="card"><div class="actions"><button class="btn secondary" id="reloadBtn" type="button">โหลดค่าปัจจุบัน</button><button class="btn gold" id="saveBtn" type="button">บันทึกและเผยแพร่</button></div><div class="message" id="message">กำลังตรวจสอบสิทธิ์ผู้ดูแล…</div><p class="note">หมายเหตุ: การซ่อนส่วนต่าง ๆ เป็นการซ่อนจากผู้เข้าชมเว็บไซต์เท่านั้น ข้อมูลต้นฉบับใน Supabase ยังคงอยู่ครบถ้วน การปิดเว็บไซต์ไม่กระทบระบบ Admin และ Tournament Manager</p></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{'use strict';
+const URL='https://soezkybqsrjgqbyxokdk.supabase.co';
+const KEY='sb_publishable_65ASq1FDolpTAu3b8LDAgg_G5cNLYQ9';
+const db=window.supabase.createClient(URL,KEY);
+const $=id=>document.getElementById(id);
+const fields=['site_enabled','show_players','show_tournaments','show_results','show_rankings','show_draw','announcement_enabled'];
+let authorized=false;
+function message(text,kind=''){const el=$('message');el.textContent=text;el.className='message '+kind;}
+function preview(){ $('previewTitle').textContent=$('announcement_title').value.trim()||'ตัวอย่างประกาศ'; $('previewBody').textContent=$('announcement_body').value.trim()||'ข้อความประกาศจะแสดงที่นี่'; }
+async function checkAdmin(){
+ const {data:sessionData,error:sessionError}=await db.auth.getSession();
+ if(sessionError)throw sessionError;
+ if(!sessionData.session)throw new Error('ไม่พบ Admin Session กรุณาเข้าสู่ระบบผ่าน OWT MASTER ADMIN ก่อน');
+ const {data,error}=await db.rpc('is_owt_admin');
+ if(error)throw error;
+ if(data!==true)throw new Error('บัญชีนี้ไม่มีสิทธิ์ OWT Admin');
+ authorized=true;$('status').textContent='AUTHENTICATED · ADMIN';
+}
+async function loadSettings(){
+ if(!authorized)throw new Error('ยังไม่ได้รับอนุญาต');
+ message('กำลังโหลดค่าควบคุมเว็บไซต์…');
+ const {data,error}=await db.from('owt_site_settings').select('*').eq('id',1).maybeSingle();
+ if(error)throw error;
+ if(!data)throw new Error('ไม่พบค่าตั้งต้น owt_site_settings กรุณาตรวจสอบการรัน SQL ขั้นตอน 7.1');
+ fields.forEach(id=>$(id).checked=data[id]===true);
+ $('announcement_title').value=data.announcement_title||'';
+ $('announcement_body').value=data.announcement_body||'';
+ preview();message('โหลดค่าปัจจุบันจาก Supabase เรียบร้อย','ok');
+}
+async function saveSettings(){
+ if(!authorized)throw new Error('ยังไม่ได้รับอนุญาต');
+ const payload={id:1};
+ fields.forEach(id=>payload[id]=$(id).checked);
+ payload.announcement_title=$('announcement_title').value.trim();
+ payload.announcement_body=$('announcement_body').value.trim();
+ if(payload.announcement_title.length>120||payload.announcement_body.length>500)throw new Error('ข้อความประกาศยาวเกินข้อกำหนด');
+ $('saveBtn').disabled=true;$('saveBtn').textContent='กำลังบันทึก…';
+ try{
+  const {error}=await db.from('owt_site_settings').upsert(payload,{onConflict:'id'});
+  if(error)throw error;
+  message('บันทึกสำเร็จ! การตั้งค่าเผยแพร่ถูกส่งไปยัง Official Website แล้ว เว็บไซต์จะดึงค่าล่าสุดภายใน 60 วินาที หรือเมื่อผู้เข้าชมโหลดหน้าใหม่','ok');
+ }finally{$('saveBtn').disabled=false;$('saveBtn').textContent='บันทึกและเผยแพร่';}
+}
+$('reloadBtn').addEventListener('click',()=>loadSettings().catch(e=>message(e.message||String(e),'error')));
+$('saveBtn').addEventListener('click',()=>saveSettings().catch(e=>message(e.message||String(e),'error')));
+$('announcement_title').addEventListener('input',preview);$('announcement_body').addEventListener('input',preview);
+checkAdmin().then(loadSettings).catch(e=>{ $('status').textContent='ACCESS DENIED';message(e.message||String(e),'error'); });
+})();
+</script></body></html>

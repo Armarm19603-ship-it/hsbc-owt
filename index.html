@@ -2,7 +2,8 @@
 <html lang="th">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HSBC OWT | Official Website & Admin Center</title>
+<title>HSBC OWT | Official Website</title>
+<meta name="description" content="Ocean World Tour official tournament, players, results and rankings website">
 <style>
 :root{--bg:#080b13;--bg2:#0e1522;--panel:#141f31;--panel2:#1b2940;--line:#2b3b55;--red:#d71936;--red2:#f13b56;--gold:#d8b66a;--gold2:#f2dda2;--white:#f6f4ef;--muted:#a5b0c0;--green:#48c995;--danger:#ff7188}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -25%,#26395b 0%,var(--bg) 55%);color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
@@ -13,7 +14,7 @@ header{position:sticky;top:0;z-index:30;background:#080b13ed;border-bottom:1px s
 .brand small{display:block;font-size:9px;letter-spacing:2.4px;color:var(--gold);font-weight:900}.brand b{font-size:17px;letter-spacing:1.1px}
 .navlinks{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.navlinks button{border:0;background:transparent;color:#c4ccda;padding:10px 11px;border-radius:7px;font-size:10px;font-weight:900;letter-spacing:.8px}.navlinks button:hover,.navlinks button.active{background:#ffffff0d;color:white}.navlinks button.active{box-shadow:inset 0 -2px var(--red)}.navlinks .adminlink{border:1px solid #d8b66a66;color:var(--gold2)}
 .menu-btn{display:none;background:#ffffff10;border:1px solid #ffffff25;color:white;padding:9px 11px;border-radius:8px}
-main{min-height:78vh}.page{display:none;animation:fadeIn .35s ease}.page.active{display:block}@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+main{min-height:78vh}.page{display:none;animation:fadeIn .35s ease}.page.active{display:block}.page[hidden]{display:none!important}@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .container{max-width:1480px;margin:auto;padding-left:4%;padding-right:4%}
 .kicker{font-size:10px;letter-spacing:2.7px;color:var(--gold);font-weight:950}.kicker:before{content:"";display:inline-block;width:25px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
 .hero{min-height:510px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px;padding-top:40px;padding-bottom:40px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-4%;top:0;width:58%;height:100%;background:radial-gradient(ellipse,#4b1424a0,transparent 68%);pointer-events:none}
@@ -23,6 +24,7 @@ main{min-height:78vh}.page{display:none;animation:fadeIn .35s ease}.page.active{
 .stats{border-block:1px solid #ffffff18;background:#ffffff04}.statsrow{display:grid;grid-template-columns:repeat(4,1fr);padding:18px 0}.stat{padding:4px 22px;border-right:1px solid #ffffff18}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat b{display:block;color:var(--gold);font-size:25px}.stat small{font-size:9px;letter-spacing:1.3px;color:#9eabbd;font-weight:900}
 .section{padding:55px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}.section-head small{color:var(--gold);font-size:9px;letter-spacing:2px;font-weight:950}.section-head h2{font-size:clamp(23px,3.5vw,37px);margin:7px 0 0;letter-spacing:-1px}.link{font-size:10px;color:var(--gold2);font-weight:900;letter-spacing:1px;border-bottom:1px solid #d8b66a66;padding-bottom:5px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.event-card,.player-card,.panel{background:linear-gradient(145deg,#17243a,#101827);border:1px solid #ffffff18;border-radius:12px;overflow:hidden}.event-card{padding:21px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;position:relative}.event-card:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #d8b66a28;border-radius:50%;right:-55px;top:-60px;box-shadow:0 0 0 20px #d8b66a07}.event-card.featured{background:linear-gradient(145deg,#4b1728,#171c2b 72%);border-color:#d7193666}.tier{font-size:9px;color:var(--gold);font-weight:950;letter-spacing:2px}.event-card h3{font-size:24px;line-height:1.05;margin:12px 0 6px}.event-card p{font-size:11px;color:var(--muted);margin:0}.event-foot{border-top:1px solid #ffffff18;padding-top:12px;display:flex;justify-content:space-between;gap:8px;font-size:9px;color:#c2ccda;letter-spacing:.8px}
+.site-announcement[hidden],.site-maintenance[hidden]{display:none!important}.site-announcement{background:linear-gradient(90deg,#8e1429,#c91e3b 55%,#7a1125);border-bottom:1px solid #f2dda255;color:#fff}.announcement-inner{max-width:1480px;margin:auto;padding:13px 4%;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.announcement-inner strong{font-size:12px;letter-spacing:.7px;color:#f7dda0}.announcement-inner span{font-size:12px;line-height:1.5}.site-maintenance{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at 50% 0%,#26395b 0%,#080b13 70%);display:grid;place-items:center;padding:24px}.maintenance-card{text-align:center;max-width:560px;border:1px solid #d8b66a66;border-radius:20px;padding:38px 28px;background:linear-gradient(145deg,#17243a,#101827);box-shadow:0 25px 80px #0008}.maintenance-mark{width:68px;height:68px;margin:0 auto 22px;display:grid;place-items:center;background:linear-gradient(145deg,#e51c3a,#811126);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-size:22px;font-weight:1000}.maintenance-card h1{font-size:clamp(26px,6vw,42px);margin:14px 0;color:#f2dda2}.maintenance-card p{color:#b8c2d1;line-height:1.9;font-size:14px}
 .band{background:linear-gradient(90deg,#94122b,#d71936 55%,#741027);padding:30px 0}.bandinner{display:flex;justify-content:space-between;align-items:center;gap:15px}.band h2{font-size:clamp(22px,4vw,36px);margin:6px 0}.band p{font-size:10px;color:#ffe3e7;margin:0}
 .page-hero{padding:48px 0 27px;border-bottom:1px solid #ffffff16;background:radial-gradient(ellipse at 80% 20%,#46172a88,transparent 50%)}.page-hero h1{font-size:clamp(34px,5.5vw,62px);margin:12px 0 6px;letter-spacing:-2px}.page-hero p{color:var(--muted);font-size:12px;margin:0}.content{padding-top:28px;padding-bottom:60px}
 .panel{padding:17px;margin-bottom:15px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #ffffff16;padding-bottom:13px;margin-bottom:14px}.panel-head b{font-size:11px;letter-spacing:1.4px}.panel-head span{font-size:9px;color:var(--gold);letter-spacing:.8px}
@@ -51,6 +53,8 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
   <button class="active" data-page="home">HOME</button><button data-page="players">PLAYERS</button><button data-page="tournaments">TOURNAMENTS</button><button data-page="results">MATCH RESULTS</button><button data-page="rankings">RANKINGS</button><button data-page="draw">OFFICIAL DRAW</button><span id="dbStatus" class="badge red db-status" role="status">CONNECTING TO OWT DATABASE</span>
  </nav>
 </div></header>
+<div id="siteAnnouncement" class="site-announcement" hidden><div class="announcement-inner"><strong id="announcementTitle"></strong><span id="announcementBody"></span></div></div>
+<div id="siteMaintenance" class="site-maintenance" hidden><div class="maintenance-card"><div class="maintenance-mark">OWT</div><div class="kicker">OCEAN WORLD TOUR</div><h1>WE WILL BE BACK SOON</h1><p>เว็บไซต์อยู่ระหว่างการปรับปรุงชั่วคราว<br>กรุณากลับมาเยี่ยมชมอีกครั้งในภายหลัง</p></div></div>
 <main>
 <section class="page active" id="page-home">
  <div class="container hero">
@@ -161,7 +165,8 @@ const FINISH_LABELS = {
 };
 const FINISH_ORDER = ["champion","runner_up","semifinal","quarterfinal","round_of_16","round_of_32"];
 const $ = id => document.getElementById(id);
-const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], selectedDrawId:"", selectedResultsId:"", lastUpdated:null, loading:false, error:""};
+const DEFAULT_SITE_SETTINGS = {site_enabled:true,show_players:true,show_tournaments:true,show_results:true,show_rankings:true,show_draw:true,announcement_enabled:false,announcement_title:"",announcement_body:""};
+const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], selectedDrawId:"", selectedResultsId:"", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
 let refreshTimer = null;
 
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -308,6 +313,46 @@ function renderDraw(){
  $("machineHint").textContent=t?"Latest confirmed athlete in the official draw.":"The official draw will appear here after Admin confirmation.";
  $("drawComplete").style.display=draw&&draw.status==="locked"?"block":"none";
 }
+function applySiteSettings(){
+ const s={...DEFAULT_SITE_SETTINGS,...state.siteSettings};
+ const enabledPages={players:s.show_players,tournaments:s.show_tournaments,results:s.show_results,rankings:s.show_rankings,draw:s.show_draw};
+ Object.entries(enabledPages).forEach(([page,enabled])=>{
+  const nav=document.querySelector(`[data-page="${page}"]`);
+  const section=$("page-"+page);
+  if(nav)nav.hidden=!enabled;
+  if(section)section.hidden=!enabled;
+  document.querySelectorAll(`[onclick*="showPage('${page}')"]`).forEach(el=>el.hidden=!enabled);
+ });
+ const featured=$("homeEventsGrid")?.closest(".section");
+ if(featured)featured.hidden=!s.show_tournaments;
+ const announcement=$("siteAnnouncement");
+ if(announcement){
+  announcement.hidden=!(s.announcement_enabled && (s.announcement_title || s.announcement_body));
+  $("announcementTitle").textContent=s.announcement_title||"ประกาศจาก OWT";
+  $("announcementBody").textContent=s.announcement_body||"";
+ }
+ const maintenance=$("siteMaintenance");
+ if(maintenance){
+  maintenance.hidden=!!s.site_enabled;
+  document.querySelector("main").style.display=s.site_enabled?"":"none";
+  document.querySelector("footer").style.display=s.site_enabled?"":"none";
+  document.querySelector("header").style.display=s.site_enabled?"":"none";
+  document.querySelector(".topline").style.display=s.site_enabled?"":"none";
+  if(announcement)announcement.hidden=!s.site_enabled || announcement.hidden;
+ }
+}
+async function loadSiteSettings(){
+ try{
+  const {data,error}=await supabaseClient.from("owt_site_settings").select("site_enabled,show_players,show_tournaments,show_results,show_rankings,show_draw,announcement_enabled,announcement_title,announcement_body").eq("id",1).maybeSingle();
+  if(error)throw error;
+  state.siteSettings=data?{...DEFAULT_SITE_SETTINGS,...data}:{...DEFAULT_SITE_SETTINGS};
+ }catch(err){
+  // Keep the public site usable with safe defaults if settings are temporarily unavailable.
+  state.siteSettings={...DEFAULT_SITE_SETTINGS};
+  console.warn("OWT site settings could not be loaded:",err.message||err);
+ }
+ applySiteSettings();
+}
 function renderAll(){
  const oldCountry=$("countryFilter")?.value||"";
  const options=Object.keys(COUNTRIES).map(k=>`<option value="${k}">${esc(COUNTRIES[k].name)}</option>`).join("");
@@ -316,6 +361,8 @@ function renderAll(){
  renderHome();renderPlayers();renderRankings();renderTournaments();renderResults();renderDraw();
 }
 function showPage(name){
+ const settingKey={players:"show_players",tournaments:"show_tournaments",results:"show_results",rankings:"show_rankings",draw:"show_draw"}[name];
+ if(settingKey && state.siteSettings[settingKey]===false){name="home";}
  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+name));
  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
  $("navlinks").classList.remove("open");
@@ -367,6 +414,7 @@ async function loadPublicData(options={}){
  state.loading=true;
  if(!options.quiet)showDbStatus("SYNCING OWT DATABASE","loading");
  try{
+  await loadSiteSettings();
   const [players,tournaments,results,matches,draws,drawEntries]=await Promise.all([
    fetchTable("owt_players","id,display_name,country_code,country_name,portrait_url,seed,is_active","seed"),
    fetchTable("owt_tournaments","id,name,tier,event_date,city,country_code,status,draw_locked,results_certified","event_date"),
