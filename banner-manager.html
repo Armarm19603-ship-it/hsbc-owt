@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>OWT Promotional Banner Manager</title>
+<style>
+:root{--bg:#090d18;--panel:#151c2d;--line:#303b52;--gold:#e1c16b;--gold2:#f3dda0;--text:#f6f4ef;--muted:#a8b1c2;--green:#48c99a;--red:#ff8c9c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#342b50 0,#101729 42%,var(--bg) 78%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:16px 14px 42px}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:10px 2px 16px}
+.brand{color:var(--gold);font-weight:900;letter-spacing:1px}.hint,.sub{color:var(--muted);font-size:12px;line-height:1.6}
+h1{font-size:clamp(25px,5vw,36px);margin:22px 0 5px}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+.card{background:linear-gradient(145deg,#1a2335,#111827);border:1px solid var(--line);border-radius:16px;padding:17px;margin:14px 0}
+.card h2{font-size:15px;color:var(--gold2);margin:0 0 14px}.status{font-size:11px;border:1px solid var(--line);padding:8px 11px;border-radius:20px;color:var(--muted)}
+label{display:block;color:#c8d0dd;font-size:12px;margin:13px 0 6px}
+input,select,textarea{width:100%;background:#0a1120;color:white;border:1px solid #3b4962;border-radius:10px;padding:12px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid #d8b66a}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.check{display:flex;align-items:center;gap:9px;font-size:13px;margin-top:14px}.check input{width:18px;height:18px;accent-color:#d8b66a}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.btn{border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-weight:800;cursor:pointer}
+.gold{background:linear-gradient(100deg,#c5a14e,#f0d993);border:0;color:#171717}.secondary{background:#222c40;color:#f5f5f5}.danger{background:#4b1d2a;color:#ffd9df;border-color:#804252}
+.message{padding:11px 12px;border-radius:10px;background:#0b1423;color:var(--muted);font-size:12px;line-height:1.5;margin-top:12px;white-space:pre-wrap}
+.message.ok{color:#8de4bc;border:1px solid #48c99555}.message.error{color:#ffd2da;border:1px solid #804252}
+.preview{display:none;margin-top:12px;background:#0b1423;border:1px solid #8b754366;border-radius:12px;padding:10px}.preview.show{display:block}
+.preview img{width:100%;max-height:250px;object-fit:contain;border-radius:8px;background:#050912;display:block}
+.banner-list{display:grid;gap:10px}.item{background:#0c1423;border:1px solid #344158;border-radius:12px;padding:12px}.item.active{border-color:var(--gold)}
+.itemhead{display:flex;gap:10px;align-items:flex-start}.thumb{width:104px;height:66px;object-fit:cover;border-radius:8px;border:1px solid #ffffff22}
+.itemtitle{font-weight:800;line-height:1.4}.meta{font-size:10px;color:var(--muted);margin-top:5px}.pill{display:inline-block;border:1px solid #4a5870;border-radius:20px;padding:4px 8px;font-size:10px;color:#dbe2ee;margin:0 4px 4px 0}
+.pill.published{border-color:#48c99566;color:#8de4bc}.pill.draft{border-color:#d8b66a66;color:var(--gold2)}.pill.archived{border-color:#804252;color:#ffb7c3}
+.item-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.item-actions button{font-size:11px;padding:8px 10px}
+.empty{border:1px dashed #45536a;border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.wrap{padding:12px 10px 30px}.card{padding:14px}.grid3{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="head"><div><div class="brand">OCEAN WORLD TOUR</div><div class="hint">MASTER ADMIN · PROMOTIONAL BANNERS</div></div><div class="status" id="authStatus">CHECKING ADMIN SESSION…</div></div>
+<h1>OWT PROMOTIONAL BANNER</h1>
+<p class="sub">จัดการแบนเนอร์ประชาสัมพันธ์บน Official Website · ใช้ Supabase Project เดิมและ Storage bucket เดิม</p>
+<div class="layout">
+<section class="card">
+<h2 id="formHeading">สร้างแบนเนอร์ใหม่</h2>
+<label for="title">หัวข้อแบนเนอร์ *</label><input id="title" maxlength="160" placeholder="เช่น THAILAND OPEN 2027">
+<label for="subtitle">ข้อความรอง</label><textarea id="subtitle" rows="2" maxlength="300" placeholder="ข้อความสั้น ๆ สำหรับประชาสัมพันธ์"></textarea>
+<label for="imageFile">ภาพแบนเนอร์ *</label><input id="imageFile" type="file" accept="image/jpeg,image/png,image/webp">
+<div class="hint">JPG / PNG / WEBP · ไม่เกิน 5 MB · แนะนำภาพ 16:9 ขนาด 1600 × 900 px</div>
+<div class="preview" id="preview"><img id="previewImg" alt="ตัวอย่างแบนเนอร์"><div class="hint" id="previewText"></div><div class="actions"><button class="btn secondary" type="button" id="removeImage">นำภาพออก</button></div></div>
+<div class="grid2">
+ <div><label for="placement">ตำแหน่งแสดงผล</label><select id="placement"><option value="home_hero">หน้าแรก — Hero Banner</option><option value="home_strip">แถบประชาสัมพันธ์</option><option value="tournament">ประชาสัมพันธ์การแข่งขัน</option><option value="results">แชมป์ / ผลการแข่งขัน</option></select></div>
+ <div><label for="status">สถานะ</label><select id="status"><option value="draft">ฉบับร่าง</option><option value="published">เผยแพร่</option><option value="archived">เก็บเข้าคลัง</option></select></div>
+</div>
+<div class="grid2">
+ <div><label for="ctaLabel">ข้อความบนปุ่ม (ไม่บังคับ)</label><input id="ctaLabel" maxlength="50" placeholder="เช่น VIEW DETAILS"></div>
+ <div><label for="ctaUrl">ลิงก์เมื่อกดปุ่ม (ไม่บังคับ)</label><input id="ctaUrl" maxlength="1000" placeholder="https://... หรือ /news.html"></div>
+</div>
+<div class="grid3">
+ <div><label for="sortOrder">ลำดับแสดง</label><input id="sortOrder" type="number" min="0" max="9999" value="10"></div>
+ <div><label for="startsAt">เริ่มแสดง (ไม่บังคับ)</label><input id="startsAt" type="datetime-local"></div>
+ <div><label for="endsAt">สิ้นสุด (ไม่บังคับ)</label><input id="endsAt" type="datetime-local"></div>
+</div>
+<label class="check"><input id="active" type="checkbox" checked> เปิดใช้งานแบนเนอร์</label>
+<div class="actions"><button class="btn gold" id="saveBtn" type="button">บันทึกแบนเนอร์</button><button class="btn secondary" id="newBtn" type="button">ล้างฟอร์ม / ใหม่</button></div>
+<div class="message" id="message">กำลังตรวจสอบสิทธิ์ผู้ดูแล…</div>
+</section>
+<section class="card">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2 style="margin:0">รายการแบนเนอร์</h2><button class="btn secondary" id="reloadBtn" type="button">รีโหลด</button></div>
+<p class="hint" id="count">กำลังโหลด…</p><div class="banner-list" id="list"><div class="empty">กำลังโหลดข้อมูล…</div></div>
+</section>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{'use strict';
+const SUPABASE_URL='https://soezkybqsrjgqbyxokdk.supabase.co';
+const SUPABASE_KEY='sb_publishable_65ASq1FDolpTAu3b8LDAgg_G5cNLYQ9';
+const BUCKET='owt-news-images',MAX=5*1024*1024,TYPES=['image/jpeg','image/png','image/webp'];
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY),$=id=>document.getElementById(id);
+let user=null,authorized=false,editingId=null,rows=[],pickedFile=null,oldImageUrl=null,removeExisting=false,objectUrl=null;
+const placementNames={home_hero:'หน้าแรก Hero',home_strip:'แถบประชาสัมพันธ์',tournament:'การแข่งขัน',results:'แชมป์ / ผลการแข่งขัน'};
+const statusNames={draft:'ฉบับร่าง',published:'เผยแพร่',archived:'เก็บเข้าคลัง'};
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function message(s,k=''){ $('message').textContent=s;$('message').className='message '+k;}
+function setPreview(url,caption='ตัวอย่างภาพแบนเนอร์'){if(!url){$('preview').classList.remove('show');$('previewImg').removeAttribute('src');$('previewText').textContent='';return;}$('previewImg').src=url;$('previewText').textContent=caption;$('preview').classList.add('show');}
+function clearObject(){if(objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=null;}}
+function resetImage(){clearObject();pickedFile=null;oldImageUrl=null;removeExisting=false;$('imageFile').value='';setPreview('');}
+function resetForm(){editingId=null;$('formHeading').textContent='สร้างแบนเนอร์ใหม่';$('title').value='';$('subtitle').value='';$('placement').value='home_hero';$('status').value='draft';$('ctaLabel').value='';$('ctaUrl').value='';$('sortOrder').value='10';$('startsAt').value='';$('endsAt').value='';$('active').checked=true;resetImage();$('saveBtn').textContent='บันทึกแบนเนอร์';renderList();}
+function parseDate(v){return v?new Date(v).toISOString():null;}
+function dateInput(v){if(!v)return '';const d=new Date(v);const p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;}
+async function verify(){const {data,error}=await db.auth.getSession();if(error)throw error;if(!data.session)throw new Error('ไม่พบ Admin Session กรุณาเข้าสู่ระบบผ่าน OWT MASTER ADMIN ก่อน');user=data.session.user;const {data:isAdmin,error:adminError}=await db.rpc('is_owt_admin');if(adminError)throw adminError;if(isAdmin!==true)throw new Error('บัญชีนี้ไม่มีสิทธิ์ OWT Admin');authorized=true;$('authStatus').textContent='AUTHENTICATED · ADMIN';}
+async function load(){if(!authorized)throw new Error('ยังไม่ได้รับอนุญาต');$('count').textContent='กำลังโหลด…';const {data,error}=await db.from('owt_banners').select('*').order('sort_order',{ascending:true}).order('created_at',{ascending:false});if(error)throw error;rows=data||[];$('count').textContent=`ทั้งหมด ${rows.length} แบนเนอร์ · เผยแพร่ ${rows.filter(x=>x.status==='published'&&x.is_active).length} · ฉบับร่าง ${rows.filter(x=>x.status==='draft').length}`;renderList();}
+function renderList(){if(!rows.length){$('list').innerHTML='<div class="empty">ยังไม่มีแบนเนอร์ เริ่มสร้างรายการแรกได้เลย</div>';return;}$('list').innerHTML=rows.map(b=>`<article class="item ${editingId===b.id?'active':''}"><div class="itemhead">${b.image_url?`<img class="thumb" src="${esc(b.image_url)}" alt="">`:''}<div style="min-width:0;flex:1"><div class="itemtitle">${esc(b.title)}</div><div class="meta">${esc(placementNames[b.placement]||b.placement)} · ลำดับ ${b.sort_order}</div><div style="margin-top:6px"><span class="pill ${esc(b.status)}">${esc(statusNames[b.status]||b.status)}</span><span class="pill">${b.is_active?'เปิดใช้งาน':'ปิดใช้งาน'}</span></div></div></div><div class="meta">${b.starts_at?'เริ่ม '+new Date(b.starts_at).toLocaleString('th-TH'):'ไม่กำหนดวันเริ่ม'} · ${b.ends_at?'สิ้นสุด '+new Date(b.ends_at).toLocaleString('th-TH'):'ไม่กำหนดวันสิ้นสุด'}</div><div class="item-actions"><button class="btn secondary" data-act="edit" data-id="${esc(b.id)}">แก้ไข</button><button class="btn secondary" data-act="toggle" data-id="${esc(b.id)}">${b.is_active?'ปิดใช้งาน':'เปิดใช้งาน'}</button><button class="btn secondary" data-act="publish" data-id="${esc(b.id)}">${b.status==='published'?'กลับเป็นฉบับร่าง':'เผยแพร่'}</button><button class="btn danger" data-act="delete" data-id="${esc(b.id)}">ลบ</button></div></article>`).join('');}
+function edit(id){const b=rows.find(x=>x.id===id);if(!b)return;resetImage();editingId=id;oldImageUrl=b.image_url;$('formHeading').textContent='แก้ไขแบนเนอร์';$('title').value=b.title||'';$('subtitle').value=b.subtitle||'';$('placement').value=b.placement||'home_hero';$('status').value=b.status||'draft';$('ctaLabel').value=b.cta_label||'';$('ctaUrl').value=b.cta_url||'';$('sortOrder').value=b.sort_order??10;$('startsAt').value=dateInput(b.starts_at);$('endsAt').value=dateInput(b.ends_at);$('active').checked=b.is_active===true;if(oldImageUrl)setPreview(oldImageUrl,'ภาพปัจจุบัน');$('saveBtn').textContent='บันทึกการแก้ไข';renderList();window.scrollTo({top:0,behavior:'smooth'});}
+function pathFromUrl(url){try{const u=new URL(url),marker=`/storage/v1/object/public/${BUCKET}/`,i=u.pathname.indexOf(marker);return i<0?null:decodeURIComponent(u.pathname.slice(i+marker.length));}catch{return null;}}
+async function deleteOld(url){const path=pathFromUrl(url);if(!path||!path.startsWith('banners/'))return;const {error}=await db.storage.from(BUCKET).remove([path]);if(error)console.warn('Could not remove old banner file:',error.message);}
+async function upload(){if(!pickedFile)return removeExisting?null:oldImageUrl;if(!TYPES.includes(pickedFile.type))throw new Error('รองรับเฉพาะ JPG, PNG และ WEBP');if(pickedFile.size>MAX)throw new Error('ไฟล์ภาพต้องไม่เกิน 5 MB');const ext=pickedFile.type==='image/jpeg'?'jpg':pickedFile.type==='image/png'?'png':'webp';const path=`banners/${user.id}/${crypto.randomUUID()}.${ext}`;const {error}=await db.storage.from(BUCKET).upload(path,pickedFile,{cacheControl:'3600',upsert:false,contentType:pickedFile.type});if(error)throw error;return db.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;}
+function validCtaUrl(raw){const v=raw.trim();if(!v)return '';if(v.startsWith('/'))return v;const u=new URL(v);if(!['http:','https:'].includes(u.protocol))throw new Error('ลิงก์ปุ่มต้องเป็น HTTP หรือ HTTPS');return u.href;}
+async function save(){if(!authorized)throw new Error('ยังไม่ได้รับอนุญาต');const title=$('title').value.trim(),subtitle=$('subtitle').value.trim(),status=$('status').value,placement=$('placement').value;if(!title)throw new Error('กรุณากรอกหัวข้อแบนเนอร์');if(!pickedFile&&!oldImageUrl)throw new Error('กรุณาเลือกภาพแบนเนอร์');const start=parseDate($('startsAt').value),end=parseDate($('endsAt').value);if(start&&end&&new Date(end)<=new Date(start))throw new Error('วันสิ้นสุดต้องอยู่หลังวันเริ่มแสดง');const cta=validCtaUrl($('ctaUrl').value);$('saveBtn').disabled=true;$('saveBtn').textContent='กำลังบันทึก…';let uploaded=null;const previous=oldImageUrl;try{const image=await upload();if(pickedFile)uploaded=image;const payload={title,subtitle,image_url:image,placement,status,is_active:$('active').checked,cta_label:$('ctaLabel').value.trim(),cta_url:cta,sort_order:Math.max(0,Math.min(9999,Number($('sortOrder').value)||0)),starts_at:start,ends_at:end,updated_at:new Date().toISOString()};let result;if(editingId)result=await db.from('owt_banners').update(payload).eq('id',editingId);else{payload.created_by=user.id;result=await db.from('owt_banners').insert(payload);}if(result.error)throw result.error;if(previous&&previous!==image)await deleteOld(previous);message('บันทึกแบนเนอร์สำเร็จ','ok');resetForm();await load();}catch(e){if(uploaded)await deleteOld(uploaded);throw e;}finally{$('saveBtn').disabled=false;$('saveBtn').textContent=editingId?'บันทึกการแก้ไข':'บันทึกแบนเนอร์';}}
+async function action(e){const b=e.target.closest('button[data-act]');if(!b)return;const id=b.dataset.id,item=rows.find(x=>x.id===id);if(!item)return;try{b.disabled=true;if(b.dataset.act==='edit'){edit(id);return;}if(b.dataset.act==='delete'){if(!confirm(`ยืนยันลบแบนเนอร์ “${item.title}” หรือไม่?`))return;const {error}=await db.from('owt_banners').delete().eq('id',id);if(error)throw error;await deleteOld(item.image_url);message('ลบแบนเนอร์แล้ว','ok');}else if(b.dataset.act==='toggle'){const {error}=await db.from('owt_banners').update({is_active:!item.is_active,updated_at:new Date().toISOString()}).eq('id',id);if(error)throw error;message(item.is_active?'ปิดใช้งานแบนเนอร์แล้ว':'เปิดใช้งานแบนเนอร์แล้ว','ok');}else if(b.dataset.act==='publish'){const next=item.status==='published'?'draft':'published';const {error}=await db.from('owt_banners').update({status:next,is_active:next==='published'?true:item.is_active,updated_at:new Date().toISOString()}).eq('id',id);if(error)throw error;message(next==='published'?'เผยแพร่แบนเนอร์แล้ว':'เปลี่ยนกลับเป็นฉบับร่างแล้ว','ok');}await load();}catch(err){message(err.message||String(err),'error');}finally{b.disabled=false;}}
+$('imageFile').addEventListener('change',e=>{const f=e.target.files?.[0];if(!f)return;if(!TYPES.includes(f.type)){e.target.value='';message('รองรับเฉพาะ JPG, PNG และ WEBP','error');return;}if(f.size>MAX){e.target.value='';message('ภาพต้องมีขนาดไม่เกิน 5 MB','error');return;}clearObject();pickedFile=f;removeExisting=false;objectUrl=URL.createObjectURL(f);setPreview(objectUrl,`${f.name} · ${(f.size/1024/1024).toFixed(2)} MB · จะอัปโหลดเมื่อกดบันทึก`);message('เลือกภาพแล้ว กดบันทึกแบนเนอร์เพื่ออัปโหลด','ok');});
+$('removeImage').addEventListener('click',()=>{clearObject();pickedFile=null;removeExisting=true;oldImageUrl=null;$('imageFile').value='';setPreview('');message('นำภาพออกแล้ว กรุณาเลือกภาพใหม่ก่อนบันทึกแบนเนอร์','error');});
+$('saveBtn').addEventListener('click',()=>save().catch(e=>message(e.message||String(e),'error')));
+$('newBtn').addEventListener('click',()=>{resetForm();message('พร้อมสร้างแบนเนอร์ใหม่');});
+$('reloadBtn').addEventListener('click',()=>load().then(()=>message('โหลดข้อมูลแล้ว','ok')).catch(e=>message(e.message||String(e),'error')));
+$('list').addEventListener('click',action);
+verify().then(load).catch(e=>{$('authStatus').textContent='ACCESS DENIED';message(e.message||String(e),'error');$('saveBtn').disabled=true;});
+})();
+</script>
+</body></html>
