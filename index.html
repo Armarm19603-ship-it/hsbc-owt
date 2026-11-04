@@ -2,8 +2,13 @@
 <html lang="th">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HSBC OWT | Official Website</title>
-<meta name="description" content="Ocean World Tour official tournament, players, results and rankings website">
+<title>OCEAN WORLD TOUR | Official Badminton Tour</title>
+<meta name="description" content="The official digital home of Ocean World Tour. Explore the 2027 badminton circuit, athletes, tournament draws, match results and world rankings.">
+<meta name="theme-color" content="#070a11">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ocean World Tour | One Tour. One World.">
+<meta property="og:description" content="The global stage of badminton. Follow tournaments, athletes, results and rankings.">
 <style>
 :root{--bg:#080b13;--bg2:#0e1522;--panel:#141f31;--panel2:#1b2940;--line:#2b3b55;--red:#d71936;--red2:#f13b56;--gold:#d8b66a;--gold2:#f2dda2;--white:#f6f4ef;--muted:#a5b0c0;--green:#48c995;--danger:#ff7188}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -25%,#26395b 0%,var(--bg) 55%);color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
@@ -42,28 +47,185 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
 @media(max-width:1000px){.player-grid{grid-template-columns:repeat(3,1fr)}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.draw-layout{grid-template-columns:1fr}.hero-art{height:300px}}
 @media(max-width:700px){.news-grid{grid-template-columns:1fr}.nav{flex-wrap:wrap}.menu-btn{display:block}.navlinks{display:none;width:100%;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks button{text-align:left}.brand b{font-size:14px}.hero{grid-template-columns:1fr;padding-top:35px}.hero h1{letter-spacing:-2px}.hero-art{height:240px}.orbit{width:240px}.shuttle{width:160px;height:160px}.statsrow{grid-template-columns:repeat(2,1fr);gap:12px}.stat{border:0;padding:4px 10px}.stat:first-child{padding-left:10px}.cards{grid-template-columns:1fr}.player-grid{grid-template-columns:repeat(2,1fr)}.section{padding:38px 0}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.admin-stats{grid-template-columns:repeat(2,1fr)}.profile-hero{grid-template-columns:90px 1fr;padding:15px}.profile-photo{width:90px;height:110px}.profile-stats{grid-template-columns:repeat(2,1fr);padding:0 15px 15px}.draw-slots{grid-template-columns:repeat(2,1fr)}.bracket{grid-template-columns:1fr}.bandinner{align-items:flex-start;flex-direction:column}.panel{padding:13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* =========================================================
+   OWT OFFICIAL HOMEPAGE V9 — PREMIUM SPORTS EDITORIAL SYSTEM
+   BWF-inspired information hierarchy; original OWT identity.
+   ========================================================= */
+:root{--bg:#070a11;--bg2:#0b1220;--panel:#111a2a;--panel2:#17243a;--line:#26354b;--red:#e21b3c;--red2:#ff3856;--gold:#d8b66a;--gold2:#f4dfa2;--white:#f8f8f6;--muted:#aab5c5;--green:#55d6a0}
+body{background:linear-gradient(180deg,#080c15 0%,#0a101b 42%,#070a11 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.005em}
+.topline{height:3px;background:linear-gradient(90deg,#d71936 0%,#f04a60 35%,#d8b66a 72%,#f4dfa2 100%)}
+header{background:rgba(7,10,17,.94);border-bottom:1px solid #ffffff16;box-shadow:0 12px 35px #0003}
+.nav{max-width:1540px;padding:14px 4.2%;min-height:76px}
+.brand{gap:13px}.brandmark{width:48px;height:48px;clip-path:none;border-radius:13px;transform:rotate(-4deg);background:linear-gradient(145deg,#f02b4a,#9b102b);box-shadow:0 8px 24px #d7193640;font-size:13px;letter-spacing:-.5px}.brand small{font-size:9px;letter-spacing:2.8px;color:#d8b66a}.brand b{font-size:16px;letter-spacing:1.6px}
+.navlinks{gap:3px}.navlinks button{font-size:10px;letter-spacing:1px;padding:12px 12px;border-radius:8px;color:#bdc7d5}.navlinks button.active{background:#ffffff0a;box-shadow:inset 0 -2px #e21b3c;color:#fff}.navlinks button:hover{color:#fff;background:#ffffff0b}.db-status{margin-left:7px;font-size:8px!important}
+.menu-btn{border-radius:9px;font-weight:850;letter-spacing:1px}
+.container{max-width:1540px;padding-left:4.2%;padding-right:4.2%}
+.hero-v9{min-height:590px;grid-template-columns:1.02fr .98fr;gap:clamp(18px,4vw,64px);padding-top:54px;padding-bottom:48px;isolation:isolate}
+.hero-v9:after{right:-9%;top:-12%;width:72%;height:125%;background:radial-gradient(ellipse at 60% 48%,#a9163540 0%,#26395b38 35%,transparent 70%);z-index:-1}
+.hero-copy{position:relative;z-index:2}.hero-kicker{display:flex;align-items:center;gap:11px;color:#d9bd7c;font-size:10px;font-weight:950;letter-spacing:3px}.hero-kicker:before{content:"";width:31px;height:2px;background:var(--red)}
+.hero-season{display:inline-flex;align-items:center;gap:8px;margin-top:23px;padding:7px 11px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff08;color:#c5cfdd;font-size:9px;font-weight:900;letter-spacing:1.5px}.hero-season i{width:7px;height:7px;border-radius:50%;background:#55d6a0;box-shadow:0 0 0 4px #55d6a018}
+.hero-v9 h1{font-size:clamp(54px,7.5vw,106px);line-height:.86;letter-spacing:-.075em;margin:25px 0 20px;font-weight:1000}.hero-v9 h1 span{color:#e21b3c;text-shadow:0 10px 35px #e21b3c24}.hero-v9 .hero-description{max-width:560px;color:#b8c3d2;font-size:clamp(13px,1.35vw,16px);line-height:1.85;margin:0}.hero-v9 .actions{margin-top:27px;gap:11px}.hero-v9 .btn{padding:15px 20px;border-radius:9px;font-size:10px;letter-spacing:1.25px}.hero-v9 .btn-red{background:linear-gradient(110deg,#f02b4a,#b80e30);box-shadow:0 12px 30px #d7193638}.hero-v9 .btn-outline{background:#ffffff08;border-color:#ffffff35}.hero-facts{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#8f9bad;font-size:9px;font-weight:850;letter-spacing:1.2px}.hero-facts span{display:flex;align-items:center;gap:7px}.hero-facts b{color:#e7d29a;font-size:11px}
+.hero-visual{height:455px;position:relative;display:grid;place-items:center;isolation:isolate;overflow:visible}.hero-visual:before{content:"";position:absolute;inset:5% 2% 2% 4%;border-radius:30px;background:radial-gradient(ellipse at 55% 48%,#1b3454 0%,#111c30 42%,#0b101b 76%);border:1px solid #ffffff1b;box-shadow:0 35px 85px #0008;transform:skewY(-2deg);z-index:-2}.hero-visual:after{content:"";position:absolute;inset:12% 8% 12% 10%;border:1px solid #d8b66a30;border-radius:50%;box-shadow:0 0 0 24px #d8b66a08,0 0 0 54px #d8b66a05;z-index:-1}.court-art{position:absolute;inset:7% 0 0;opacity:.58;transform:perspective(650px) rotateX(58deg) rotateZ(-17deg) scale(1.08);transform-origin:center 55%}.court-art svg{width:100%;height:100%}.hero-shuttle{width:min(52%,260px);aspect-ratio:1;position:absolute;top:13%;left:34%;filter:drop-shadow(0 25px 35px #000b);transform:rotate(24deg);animation:heroFloat 6s ease-in-out infinite}.hero-shuttle svg{width:100%;height:100%}@keyframes heroFloat{50%{transform:translateY(-13px) rotate(29deg)}}
+.hero-visual-top{position:absolute;top:8%;left:8%;right:8%;display:flex;justify-content:space-between;gap:10px;color:#c3cedc;font-size:8px;font-weight:900;letter-spacing:2px}.hero-visual-top span:last-child{color:#e5ca8b}.hero-event-card{position:absolute;right:0;bottom:8%;width:min(78%,350px);padding:17px 19px;background:rgba(9,15,26,.94);border:1px solid #d8b66a75;border-radius:12px;box-shadow:0 18px 50px #0009;backdrop-filter:blur(14px)}.hero-event-card small{display:block;color:#d8b66a;font-size:8px;font-weight:950;letter-spacing:2px}.hero-event-card b{display:block;font-size:clamp(17px,2.1vw,24px);letter-spacing:.5px;margin:6px 0 3px}.hero-event-card span{color:#aeb9c9;font-size:9px;letter-spacing:1.5px}.hero-event-card button{float:right;margin-top:-3px;background:#e21b3c;color:white;border:0;border-radius:7px;padding:9px 11px;font-size:8px;font-weight:950;letter-spacing:1px}
+.stats{background:linear-gradient(90deg,#ffffff06,#ffffff02,#ffffff06);border-block:1px solid #ffffff18}.statsrow{padding:20px 0}.stat{padding:6px 25px;border-right:1px solid #ffffff17}.stat b{font-size:30px;color:#f1d894;letter-spacing:-1px}.stat small{font-size:8px;letter-spacing:1.7px;color:#94a2b5}
+.section{padding:58px 0}.section-head{margin-bottom:22px}.section-head small{font-size:9px;letter-spacing:2.5px;color:#d8b66a}.section-head h2{font-size:clamp(22px,3vw,34px);letter-spacing:-1.1px;margin-top:8px}.link{font-size:9px;letter-spacing:1.3px;color:#f1d894}
+.tier-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tier-tile{position:relative;overflow:hidden;padding:19px 18px;border:1px solid #ffffff18;border-radius:12px;background:linear-gradient(145deg,#17243a,#0e1726);min-height:105px}.tier-tile:after{content:"";position:absolute;width:86px;height:86px;border:1px solid #d8b66a38;border-radius:50%;right:-25px;bottom:-42px;box-shadow:0 0 0 12px #d8b66a08}.tier-tile small{display:block;color:#aab6c7;font-size:8px;font-weight:900;letter-spacing:1.8px}.tier-tile b{display:block;color:#f1d894;font-size:24px;letter-spacing:-.5px;margin-top:7px}.tier-tile span{font-size:9px;color:#8f9caf}
+.home-dashboard-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:15px;align-items:stretch}.home-feature-panel{padding:21px;background:linear-gradient(145deg,#121e30,#0c1422);border:1px solid #ffffff18;border-radius:14px;min-width:0}.home-feature-panel .section-head{margin-bottom:16px}.home-feature-panel .section-head h2{font-size:20px}.home-match-list{display:grid;gap:9px}.home-match-card{padding:12px 13px;border:1px solid #ffffff12;border-radius:10px;background:#ffffff04}.home-match-meta{display:flex;justify-content:space-between;gap:10px;color:#9eabbd;font-size:8px;font-weight:900;letter-spacing:1px;margin-bottom:10px}.home-match-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px}.home-match-player{display:flex;align-items:center;gap:8px;min-width:0;font-size:10px;font-weight:850;color:#b8c3d2}.home-match-player:last-child{justify-content:flex-end;text-align:right}.home-match-player.winner{color:#f3dfa5}.home-match-player span.name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.home-match-score{min-width:70px;text-align:center;color:#fff;font-size:12px;font-weight:950;letter-spacing:.5px}.home-match-score small{display:block;color:#8d9aad;font-size:7px;letter-spacing:1px;margin-top:3px}.home-rank-list{display:grid;gap:0}.home-rank-row{display:grid;grid-template-columns:27px 36px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #ffffff12}.home-rank-row:last-child{border-bottom:0}.home-rank-number{font-size:11px;font-weight:950;color:#d8b66a}.home-rank-avatar{width:34px;height:34px;border-radius:50%;font-size:11px}.home-rank-name{min-width:0}.home-rank-name b{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.home-rank-name small{display:block;color:#8e9bad;font-size:8px;margin-top:3px}.home-rank-points{font-size:10px;color:#f1d894;font-weight:950;font-variant-numeric:tabular-nums}
+.cards{gap:15px}.event-card,.player-card,.panel{border-radius:13px;border-color:#ffffff19;background:linear-gradient(145deg,#17243a,#0e1726)}.event-card{padding:22px;min-height:205px;transition:transform .22s,border-color .22s,box-shadow .22s}.event-card:hover{transform:translateY(-4px);border-color:#d8b66a66;box-shadow:0 18px 40px #0005}.event-card.featured{background:linear-gradient(145deg,#4a1729,#172034 78%);border-color:#e21b3c70}.event-card h3{font-size:23px;letter-spacing:-.4px}.event-foot{font-size:8px;letter-spacing:1px}
+.news-grid{gap:15px}.news-card{border-radius:13px;border-color:#ffffff18;background:linear-gradient(145deg,#17243a,#0e1726);transition:transform .22s,border-color .22s}.news-card:hover{transform:translateY(-4px);border-color:#d8b66a65}.news-card img{height:190px}.news-card-content{padding:17px}.news-card h3{font-size:16px;line-height:1.4}.news-card p{font-size:11px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.band{background:linear-gradient(105deg,#8c1129 0%,#d71936 52%,#571226 100%);position:relative;overflow:hidden}.band:after{content:"OWT";position:absolute;right:5%;top:-40px;font-size:150px;font-weight:1000;color:#ffffff0a;letter-spacing:-12px;pointer-events:none}.bandinner{position:relative;z-index:1;padding-top:4px;padding-bottom:4px}.band h2{letter-spacing:-1px}.band .btn-gold{border-radius:9px}
+.page-hero{padding:54px 0 31px;background:radial-gradient(ellipse at 85% 10%,#8d183244,transparent 52%),linear-gradient(90deg,#101b2c,#0a101b);border-bottom:1px solid #ffffff16}.page-hero h1{font-size:clamp(35px,5vw,58px);letter-spacing:-2px}.page-hero p{font-size:13px;line-height:1.7;max-width:680px}.content{padding-top:28px;padding-bottom:64px}.panel{box-shadow:0 12px 32px #0002}.player-card{transition:transform .2s,border-color .2s}.player-card:hover{transform:translateY(-3px);border-color:#d8b66a75}.tablewrap table{border-collapse:separate;border-spacing:0}.tablewrap th:first-child{border-radius:8px 0 0 0}.tablewrap th:last-child{border-radius:0 8px 0 0}.tablewrap th{background:#ffffff0a}.tablewrap td{font-size:11px}.btn{border-radius:9px}.field{border-radius:9px;background:#0a1220;border-color:#34445e}.notice{border-radius:9px}
+footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.footer-inner b{font-size:12px;letter-spacing:1.8px;color:#f1d894}.footer-inner p{max-width:620px;line-height:1.7;color:#8996a9}
+@media(max-width:1050px){.navlinks button{padding:10px 8px;font-size:9px}.hero-v9{min-height:520px}.hero-visual{height:390px}.home-dashboard-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.nav{min-height:68px;padding:11px 5%}.brandmark{width:42px;height:42px}.brand b{font-size:13px;letter-spacing:1px}.brand small{font-size:8px;letter-spacing:2px}.menu-btn{display:block}.navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 4px}.navlinks.open{display:flex}.navlinks button{text-align:left;padding:12px 13px;font-size:10px}.db-status{margin:6px 0 0;width:max-content}.container{padding-left:5%;padding-right:5%}.hero-v9{grid-template-columns:1fr;gap:5px;min-height:auto;padding-top:39px;padding-bottom:26px}.hero-v9 h1{font-size:clamp(57px,15vw,84px);letter-spacing:-.075em;margin:21px 0 16px}.hero-v9 .hero-description{font-size:13px;line-height:1.8}.hero-v9 .actions{margin-top:21px}.hero-v9 .btn{padding:13px 15px;font-size:9px}.hero-facts{margin-top:20px;gap:12px}.hero-visual{height:310px;margin:2px -2% 0}.hero-visual:before{inset:4% 3% 3%}.hero-visual:after{inset:12% 12% 12%}.hero-shuttle{width:48%;top:11%;left:28%}.hero-event-card{right:2%;bottom:6%;width:min(82%,310px);padding:13px 15px}.hero-event-card b{font-size:18px}.hero-visual-top{top:8%;font-size:7px}.statsrow{grid-template-columns:repeat(2,1fr);gap:0;padding:12px 0}.stat{padding:10px 12px;border-right:0;border-bottom:1px solid #ffffff13}.stat:nth-child(odd){border-right:1px solid #ffffff13}.stat:nth-last-child(-n+2){border-bottom:0}.stat:first-child{padding-left:12px}.stat b{font-size:25px}.stat small{font-size:7px;letter-spacing:1.2px}.section{padding:39px 0}.section-head{align-items:flex-start;flex-direction:row}.section-head h2{font-size:21px}.tier-strip{grid-template-columns:repeat(2,1fr);gap:8px}.tier-tile{min-height:93px;padding:15px}.tier-tile b{font-size:22px}.home-dashboard-grid{grid-template-columns:1fr}.home-feature-panel{padding:15px}.home-feature-panel .section-head h2{font-size:17px}.home-match-player{font-size:9px;gap:5px}.home-match-score{min-width:62px;font-size:11px}.cards{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr}.news-card img{height:190px}.page-hero{padding:38px 0 25px}.page-hero h1{font-size:37px}.page-hero p{font-size:11px}.content{padding-top:20px}.bandinner{align-items:flex-start;flex-direction:column;padding-top:4px;padding-bottom:4px}.band .btn{width:100%}.footer-inner{display:block}.footer-inner p{font-size:9px}.player-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.hero-v9 .actions{flex-direction:column}.hero-v9 .actions .btn{width:100%}.home-match-pair{gap:5px}.home-match-player{font-size:8px}.home-match-score{min-width:54px;font-size:10px}.player-grid{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   OWT OFFICIAL HOMEPAGE V10 — INTERNATIONAL SPORTS PLATFORM
+   Original OWT identity; responsive, editorial and app-like.
+   ========================================================= */
+:root{--owt-red:#e51d3b;--owt-blue:#10213b;--owt-gold:#e0c17a;--owt-ice:#dce6f3}
+html{scroll-padding-top:88px}
+body{overflow-x:hidden;background:radial-gradient(ellipse at 82% 5%,#1b2b48 0%,transparent 32%),linear-gradient(180deg,#070a11 0%,#0a1120 48%,#070a11 100%)}
+.topline{height:3px;background:linear-gradient(90deg,#e51d3b 0%,#9f1630 32%,#d9b96f 70%,#f5e2aa 100%)}
+.utility-bar{background:#05070c;border-bottom:1px solid #ffffff12;color:#94a2b5;font-size:9px;letter-spacing:1.35px;font-weight:850}
+.utility-inner{max-width:1540px;margin:auto;padding:8px 4.2%;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.utility-left,.utility-right{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.utility-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#55d6a0;box-shadow:0 0 0 4px #55d6a018;margin-right:7px}
+.utility-right a{color:#e4cd91}
+header{background:rgba(6,9,16,.94);border-bottom:1px solid #ffffff18;box-shadow:0 12px 38px #0005}
+.nav{min-height:78px;padding:13px 4.2%}
+.brandmark{width:48px;height:48px;border:1px solid #e3c77f;border-radius:13px;background:linear-gradient(145deg,#d91d3b,#771329);box-shadow:0 8px 26px #d7193630}
+.brand small{font-size:8px;letter-spacing:2.7px}.brand b{font-size:15px;letter-spacing:1.45px}
+.navlinks button{font-size:9px;letter-spacing:1.2px;padding:12px 11px}
+.navlinks button.active{color:#fff;background:linear-gradient(180deg,#ffffff0c,#ffffff04);box-shadow:inset 0 -2px #e51d3b}
+.db-status{white-space:nowrap;border-radius:999px!important;padding:7px 9px!important}
+.hero-v9{min-height:610px;padding-top:60px;padding-bottom:52px}
+.hero-v9 h1{font-size:clamp(58px,8vw,112px);line-height:.83;letter-spacing:-.082em}
+.hero-v9 .hero-description{max-width:590px;font-size:clamp(13px,1.25vw,16px);line-height:1.9;color:#c1ccda}
+.hero-season{border-color:#d8b66a3b;background:linear-gradient(90deg,#ffffff0b,#ffffff03);}
+.hero-visual{height:475px}
+.hero-visual:before{background:radial-gradient(ellipse at 54% 42%,#263f63 0%,#14233b 42%,#0b111e 78%);border-color:#d8b66a32;box-shadow:0 35px 90px #0009,inset 0 0 80px #d8b66a08}
+.hero-visual:after{border-color:#e2c57d48;box-shadow:0 0 0 25px #d8b66a09,0 0 0 56px #d8b66a05}
+.hero-shuttle{filter:drop-shadow(0 28px 42px #000c)}
+.hero-event-card{border-radius:10px;border-color:#e1c47b8a;background:linear-gradient(135deg,#0c1422f5,#101d31f5);}
+.hero-event-card button{background:linear-gradient(110deg,#ed2848,#b70f31);padding:10px 12px}
+.statsrow{padding:22px 0}.stat b{font-size:32px}
+/* fast access rail */
+.quick-access{padding:22px 0 8px}
+.quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.quick-card{min-height:86px;display:flex;align-items:center;gap:13px;padding:16px 17px;border:1px solid #ffffff18;border-radius:12px;background:linear-gradient(145deg,#14223a,#0d1626);transition:transform .2s,border-color .2s,background .2s;text-align:left;cursor:pointer;color:#f8f8f6}
+.quick-card:hover{transform:translateY(-3px);border-color:#d8b66a80;background:linear-gradient(145deg,#1b2c48,#111c2e)}
+.quick-icon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;border-radius:10px;background:#e51d3b18;color:#f0d797;border:1px solid #d8b66a3b}
+.quick-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.quick-copy b{display:block;font-size:10px;letter-spacing:1.15px}.quick-copy span{display:block;margin-top:5px;color:#93a2b7;font-size:9px;line-height:1.35}
+.section-head h2{font-weight:950;letter-spacing:-.8px}
+.home-feature-panel{background:linear-gradient(145deg,#142139,#0c1422);border-color:#ffffff20;box-shadow:0 16px 40px #0002}
+.home-match-card{background:#ffffff05;border-color:#ffffff18}
+.tier-tile{background:linear-gradient(145deg,#172842,#0d1728);border-color:#ffffff20}
+.event-card{box-shadow:0 12px 34px #0002}
+.news-card{transition:transform .2s,border-color .2s}.news-card:hover{transform:translateY(-3px);border-color:#d8b66a75}
+.page-hero{background:radial-gradient(ellipse at 78% 18%,#3c1a2b80,transparent 52%),linear-gradient(90deg,#0b1424,#0a101b)}
+footer{background:#05070c;border-top:1px solid #ffffff18}
+.footer-inner{max-width:1540px;margin:auto;padding:30px 4.2%;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:start}
+.footer-inner b{color:#f0d797;font-size:13px;letter-spacing:1.5px}.footer-inner p{color:#8795a9;font-size:10px;line-height:1.8;margin:8px 0 0}
+.mobile-dock{display:none}
+@media(max-width:1050px){.navlinks button{padding:10px 8px;font-size:8px}.db-status{font-size:7px!important}.quick-card{padding:13px}.quick-copy b{font-size:9px}}
+@media(max-width:760px){
+ .utility-inner{padding:7px 5%;font-size:8px}.utility-right{display:none}
+ .nav{min-height:66px;padding:10px 5%}.brandmark{width:42px;height:42px}.brand b{font-size:12px}.brand small{font-size:7px;letter-spacing:2px}
+ .menu-btn{display:block;padding:10px 12px;font-size:9px}
+ .navlinks{position:absolute;top:100%;left:0;right:0;width:100%;padding:10px 5% 15px;background:#080d17f7;border-bottom:1px solid #ffffff20;box-shadow:0 20px 30px #0008;z-index:40}
+ .navlinks.open{display:flex}.navlinks button{padding:12px 13px;font-size:10px;border-bottom:1px solid #ffffff0c}.db-status{margin:8px 0 0!important}
+ .hero-v9{padding-top:34px;padding-bottom:18px;min-height:auto}.hero-v9 h1{font-size:clamp(58px,15.5vw,88px);line-height:.86;margin:19px 0 16px}.hero-kicker{font-size:8px;letter-spacing:2px}.hero-season{margin-top:17px;font-size:8px}.hero-v9 .hero-description{font-size:12px;line-height:1.8}.hero-v9 .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hero-v9 .btn{padding:13px 9px;font-size:8px;letter-spacing:.7px;min-height:44px}.hero-facts{gap:12px;margin-top:20px;font-size:8px}.hero-visual{height:290px;margin:8px -2% 0}.hero-visual:before{inset:3% 3% 4%;border-radius:20px}.hero-visual:after{inset:13% 12% 12%}.hero-shuttle{width:47%;top:9%;left:28%}.hero-event-card{right:2%;bottom:5%;width:min(82%,300px);padding:12px 13px}.hero-event-card small{font-size:7px}.hero-event-card b{font-size:17px}.hero-event-card span{font-size:8px}.hero-event-card button{font-size:7px;padding:8px 9px}
+ .statsrow{padding:9px 0}.stat{padding:10px 12px}.stat b{font-size:25px}.stat small{font-size:7px}
+ .quick-access{padding:15px 0 2px}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.quick-card{min-height:75px;padding:11px 10px;gap:9px;border-radius:10px}.quick-icon{width:34px;height:34px;flex-basis:34px}.quick-icon svg{width:17px;height:17px}.quick-copy b{font-size:8px;letter-spacing:.7px}.quick-copy span{font-size:8px;margin-top:4px}
+ .section{padding:35px 0}.section-head{margin-bottom:16px}.section-head h2{font-size:19px}.home-dashboard-grid{grid-template-columns:1fr}.home-feature-panel{padding:14px}.home-feature-panel .section-head{flex-direction:row}.home-feature-panel .section-head h2{font-size:16px}.tier-strip{gap:8px}.tier-tile{padding:13px;min-height:90px}.tier-tile b{font-size:20px}.cards,.news-grid{grid-template-columns:1fr}.news-card img{height:180px}.page-hero{padding:34px 0 22px}.page-hero h1{font-size:34px}.content{padding-bottom:90px}
+ .footer-inner{display:block;padding:26px 5% 92px}.footer-inner p{font-size:9px}
+ .mobile-dock{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:10px;right:10px;bottom:calc(9px + env(safe-area-inset-bottom));z-index:50;padding:7px 5px;background:rgba(8,13,23,.94);border:1px solid #ffffff25;border-radius:16px;box-shadow:0 12px 38px #000a;backdrop-filter:blur(18px)}
+ .dock-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:46px;border:0;background:transparent;color:#9aa8bb;font-size:7px;font-weight:900;letter-spacing:.7px}.dock-item svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.dock-item.active{color:#f1d894}.dock-item.active svg{color:#e51d3b}
+}
+@media(max-width:390px){.hero-v9 .actions{grid-template-columns:1fr}.hero-facts{gap:8px}.hero-facts span{font-size:7px}.quick-card{padding:10px 8px}.quick-copy b{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.hero-shuttle{animation:none!important}}
+
 </style>
 </head>
-<body>
+<body data-owt-version="10.0">
 <div class="topline"></div>
+<div class="utility-bar"><div class="utility-inner"><div class="utility-left"><span><i class="utility-dot"></i>OFFICIAL OWT DIGITAL PLATFORM</span><span>2027 SEASON</span></div><div class="utility-right"><span>THE WORLD STAGE OF BADMINTON</span><a href="#" onclick="showPage('news');return false">LATEST UPDATES ↗</a></div></div></div>
 <header><div class="nav">
- <a class="brand" href="#" onclick="showPage('home');return false"><div class="brandmark">O</div><div><small>HSBC PRESENTS</small><b>OCEAN WORLD TOUR</b></div></a>
+ <a class="brand" href="#" onclick="showPage('home');return false"><div class="brandmark">OWT</div><div><small>OFFICIAL BADMINTON TOUR</small><b>OCEAN WORLD TOUR</b></div></a>
  <button class="menu-btn" id="menuBtn">MENU ☰</button>
  <nav class="navlinks" id="navlinks">
-  <button class="active" data-page="home">HOME</button><button data-page="players">PLAYERS</button><button data-page="tournaments">TOURNAMENTS</button><button data-page="results">MATCH RESULTS</button><button data-page="rankings">RANKINGS</button><button data-page="draw">OFFICIAL DRAW</button><button data-page="news">NEWS</button><span id="dbStatus" class="badge red db-status" role="status">CONNECTING TO OWT DATABASE</span>
+  <button class="active" data-page="home">HOME</button><button data-page="tournaments">TOUR</button><button data-page="players">PLAYERS</button><button data-page="results">MATCH CENTER</button><button data-page="rankings">RANKINGS</button><button data-page="draw">DRAW</button><button data-page="news">NEWS</button><span id="dbStatus" class="badge red db-status" role="status">CONNECTING TO OWT DATABASE</span>
  </nav>
 </div></header>
 <div id="siteAnnouncement" class="site-announcement" hidden><div class="announcement-inner"><strong id="announcementTitle"></strong><span id="announcementBody"></span></div></div>
 <div id="siteMaintenance" class="site-maintenance" hidden><div class="maintenance-card"><div class="maintenance-mark">OWT</div><div class="kicker">OCEAN WORLD TOUR</div><h1>WE WILL BE BACK SOON</h1><p>เว็บไซต์อยู่ระหว่างการปรับปรุงชั่วคราว<br>กรุณากลับมาเยี่ยมชมอีกครั้งในภายหลัง</p></div></div>
 <main>
 <section class="page active" id="page-home">
- <div class="container hero">
-  <div><div class="kicker">THE WORLD STAGE OF BADMINTON</div><h1>ONE TOUR.<br><span>ONE WORLD.</span></h1><p>Welcome to Ocean World Tour — a global badminton competition universe. Follow tournaments, discover athletes, and experience every draw on the road to the title.</p><div class="actions"><button class="btn btn-red" onclick="showPage('draw')">ENTER LIVE DRAW ↗</button><button class="btn btn-outline" onclick="showPage('players')">MEET THE PLAYERS</button></div></div>
-  <div class="hero-art"><div class="orbit"></div><div class="shuttle"><svg viewBox="0 0 240 240" fill="none"><g transform="translate(120 120) rotate(36)"><path d="M-22 -68 L-47 -112 Q0 -135 47 -112 L22 -68" fill="#f5f0e4" stroke="#d8b66a" stroke-width="3"/><path d="M-22 -68L-47 -112M-10 -70L-16 -124M4 -70L16 -124M22 -68L47 -112" stroke="#a8b0bd" stroke-width="3"/><path d="M-22 -68 Q0 -43 22 -68 L18 5 Q0 23 -18 5Z" fill="#d8b66a" stroke="#f4df9d" stroke-width="3"/><ellipse cx="0" cy="10" rx="21" ry="16" fill="#c91e3b" stroke="#f4df9d" stroke-width="3"/></g></svg></div><div class="hero-label"><small>FEATURED EVENT · 2027</small><b>THAILAND OPEN</b><small>ULTRA 1000 · BANGKOK</small></div></div>
+ <div class="container hero hero-v9">
+  <div class="hero-copy">
+   <div class="hero-kicker">THE WORLD STAGE OF BADMINTON</div>
+   <div class="hero-season"><i></i> OWT 2027 SEASON · OFFICIAL TOUR HUB</div>
+   <h1>ONE TOUR.<br><span>ONE WORLD.</span></h1>
+   <p class="hero-description">Welcome to Ocean World Tour. Follow the global badminton circuit, discover elite athletes, explore official draws and stay close to every match on the road to the title.</p>
+   <div class="actions">
+    <button class="btn btn-red" onclick="showPage('tournaments')">EXPLORE THE TOUR ↗</button>
+    <button class="btn btn-outline" onclick="showPage('draw')">OFFICIAL DRAW CENTER</button>
+   </div>
+   <div class="hero-facts"><span><b>04</b> TOUR LEVELS</span><span><b>16</b> ATHLETES</span><span><b>01</b> WORLD STAGE</span></div>
+  </div>
+  <div class="hero-visual" aria-label="Ocean World Tour featured event artwork">
+   <div class="hero-visual-top"><span>OCEAN WORLD TOUR · 2027</span><span>THE GLOBAL CIRCUIT</span></div>
+   <div class="court-art" aria-hidden="true"><svg viewBox="0 0 600 430" fill="none"><path d="M70 58L530 58L580 375L20 375Z" stroke="#d8b66a" stroke-width="2"/><path d="M110 90L490 90L530 345L70 345Z" stroke="#d8b66a" stroke-width="1.5"/><path d="M300 58V375M70 215H530M110 90L300 215L490 90M70 345L300 215L530 345" stroke="#d8b66a" stroke-width="1.2"/><path d="M45 215H555" stroke="#fff" stroke-width="2" stroke-dasharray="5 7"/><path d="M70 375L110 90M530 375L490 90" stroke="#fff" stroke-width="1" opacity=".4"/></svg></div>
+   <div class="hero-shuttle" aria-hidden="true"><svg viewBox="0 0 240 240" fill="none"><g transform="translate(120 120) rotate(36)"><path d="M-22 -68 L-47 -112 Q0 -135 47 -112 L22 -68" fill="#f5f0e4" stroke="#d8b66a" stroke-width="3"/><path d="M-22 -68L-47 -112M-10 -70L-16 -124M4 -70L16 -124M22 -68L47 -112" stroke="#a8b0bd" stroke-width="3"/><path d="M-22 -68 Q0 -43 22 -68 L18 5 Q0 23 -18 5Z" fill="#d8b66a" stroke="#f4df9d" stroke-width="3"/><ellipse cx="0" cy="10" rx="21" ry="16" fill="#c91e3b" stroke="#f4df9d" stroke-width="3"/></g></svg></div>
+   <div class="hero-event-card"><small>FEATURED EVENT · 2027</small><b>THAILAND OPEN</b><span>ULTRA 1000 · BANGKOK</span><button onclick="showPage('tournaments')">VIEW EVENT ↗</button></div>
+  </div>
  </div>
- <div class="stats"><div class="container statsrow"><div class="stat"><b id="homeEvents">5</b><small>REGISTERED EVENTS</small></div><div class="stat"><b>4</b><small>TOURNAMENT TIERS</small></div><div class="stat"><b id="homePlayers">16</b><small>ELITE PLAYERS</small></div><div class="stat"><b id="homeChampion">—</b><small>WORLD NO. 1</small></div></div></div>
- <div class="container section"><div class="section-head"><div><small>THE 2027 SEASON</small><h2>FEATURED TOURNAMENTS</h2></div><a class="link" href="#" onclick="showPage('tournaments');return false">VIEW ALL EVENTS ↗</a></div><div class="cards" id="homeEventsGrid"></div></div>
- <div class="container section"><div class="section-head"><div><small>OFFICIAL UPDATES</small><h2>OWT LATEST NEWS</h2></div><a class="link" href="#" onclick="showPage('news');return false">VIEW ALL NEWS ↗</a></div><div class="news-grid" id="homeNewsGrid"></div></div>
+ <div class="stats"><div class="container statsrow">
+  <div class="stat"><b id="homeEvents">2</b><small>REGISTERED EVENTS</small></div>
+  <div class="stat"><b>4</b><small>TOURNAMENT TIERS</small></div>
+  <div class="stat"><b id="homePlayers">16</b><small>ELITE ATHLETES</small></div>
+  <div class="stat"><b id="homeChampion">—</b><small>WORLD NO. 1</small></div>
+ </div></div>
+ <div class="container quick-access"><div class="quick-grid">
+  <button class="quick-card" onclick="showPage('tournaments')"><span class="quick-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14zM4 9h16M9 5v14M15 5v14"/></svg></span><span class="quick-copy"><b>TOURNAMENT HUB</b><span>Explore the global circuit</span></span></button>
+  <button class="quick-card" onclick="showPage('results')"><span class="quick-icon"><svg viewBox="0 0 24 24"><path d="M4 18V6m0 12h16M8 15l3-4 3 2 5-7"/></svg></span><span class="quick-copy"><b>MATCH CENTER</b><span>Scores and match results</span></span></button>
+  <button class="quick-card" onclick="showPage('rankings')"><span class="quick-icon"><svg viewBox="0 0 24 24"><path d="M5 20V11h4v9M10 20V5h4v15M15 20v-8h4v8M3 20h18"/></svg></span><span class="quick-copy"><b>WORLD RANKINGS</b><span>Follow the race to No. 1</span></span></button>
+  <button class="quick-card" onclick="showPage('draw')"><span class="quick-icon"><svg viewBox="0 0 24 24"><path d="M5 4v5a3 3 0 0 0 3 3h8a3 3 0 0 1 3 3v5M5 20v-5a3 3 0 0 1 3-3M19 4v5a3 3 0 0 1-3 3"/><path d="M3 4h4M17 4h4M3 20h4M17 20h4"/></svg></span><span class="quick-copy"><b>OFFICIAL DRAW</b><span>View the tournament bracket</span></span></button>
+ </div></div>
+ <div class="container section">
+  <div class="section-head"><div><small>THE OWT GLOBAL CIRCUIT</small><h2>FOUR LEVELS. ONE WORLD TOUR.</h2></div></div>
+  <div class="tier-strip">
+   <article class="tier-tile"><small>TOUR SERIES</small><b>ULTRA 300</b><span>Rising competition</span></article>
+   <article class="tier-tile"><small>TOUR SERIES</small><b>ULTRA 500</b><span>Elite performance</span></article>
+   <article class="tier-tile"><small>PREMIER SERIES</small><b>ULTRA 750</b><span>Championship pursuit</span></article>
+   <article class="tier-tile"><small>FLAGSHIP SERIES</small><b>ULTRA 1000</b><span>The highest stage</span></article>
+  </div>
+ </div>
+ <div class="container section" style="padding-top:8px">
+  <div class="home-dashboard-grid">
+   <section class="home-feature-panel">
+    <div class="section-head"><div><small>COURT-SIDE UPDATES</small><h2>LATEST MATCH RESULTS</h2></div><a class="link" href="#" onclick="showPage('results');return false">ALL RESULTS ↗</a></div>
+    <div class="home-match-list" id="homeMatchGrid"><div class="hint">Match results will appear here when recorded by OWT.</div></div>
+   </section>
+   <section class="home-feature-panel">
+    <div class="section-head"><div><small>THE RACE TO THE TOP</small><h2>WORLD RANKING</h2></div><a class="link" href="#" onclick="showPage('rankings');return false">FULL TABLE ↗</a></div>
+    <div class="home-rank-list" id="homeRankingList"><div class="hint">Ranking standings will appear after results are certified.</div></div>
+   </section>
+  </div>
+ </div>
+ <div class="container section">
+  <div class="section-head"><div><small>THE 2027 SEASON</small><h2>FEATURED TOURNAMENTS</h2></div><a class="link" href="#" onclick="showPage('tournaments');return false">VIEW ALL EVENTS ↗</a></div>
+  <div class="cards" id="homeEventsGrid"></div>
+ </div>
+ <div class="container section" style="padding-top:5px">
+  <div class="section-head"><div><small>OFFICIAL UPDATES</small><h2>OWT LATEST NEWS</h2></div><a class="link" href="#" onclick="showPage('news');return false">VIEW ALL NEWS ↗</a></div>
+  <div class="news-grid" id="homeNewsGrid"></div>
+ </div>
  <div class="band"><div class="container bandinner"><div><p>THE NEXT CHAPTER STARTS HERE</p><h2>THE DRAW IS IN YOUR HANDS.</h2><p>Follow every name. Every match. Every route to the final.</p></div><button class="btn btn-gold" onclick="showPage('draw')">OPEN DRAW CENTER ↗</button></div></div>
 </section>
 
@@ -128,7 +290,7 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
 </section>
 
 </main>
-<footer><div class="footer-inner"><div><b>HSBC OCEAN WORLD TOUR</b><p>ONE TOUR. ONE WORLD. A fan-created digital badminton tournament simulation.</p></div><p>FAN-MADE SIMULATION PROJECT. Not affiliated with, sponsored by, or endorsed by HSBC, BWF, or any real-world tournament organizer. All player and tournament data is for this fictional OWT project.</p></div></footer>
+<footer><div class="footer-inner"><div><b>OCEAN WORLD TOUR · OWT</b><p>ONE TOUR. ONE WORLD. An independent fan-created digital badminton tournament simulation.</p></div><p>FAN-MADE SIMULATION PROJECT. Not affiliated with, sponsored by, or endorsed by HSBC, BWF, or any real-world tournament organizer. All player and tournament data is for this fictional OWT project.</p></div></footer>
 
 <div class="modal" id="profileModal" role="dialog" aria-modal="true" aria-label="Player profile"><div class="modal-box"><div class="modal-head"><b>OWT ATHLETE PROFILE</b><button class="close" id="closeProfile">CLOSE ✕</button></div><div id="profileContent"></div></div></div>
 <div class="toast" id="toast"></div>
@@ -231,6 +393,23 @@ function renderHome(){
  $("homeChampion").textContent=top&&top.points?top.player.name.split(" ")[0]:"—";
  $("homeEventsGrid").innerHTML=state.tournaments.slice().sort((a,b)=>(a.date||"9999").localeCompare(b.date||"9999")).slice(0,3).map(eventCard).join("")
   ||'<div class="panel hint">Tournament information will appear here when published by OWT.</div>';
+ renderHomeMatches();
+ renderHomeRanking();
+}
+function renderHomeMatches(){
+ const root=$("homeMatchGrid");if(!root)return;
+ const recent=state.matches.slice().sort((a,b)=>(b.recordedAt||"").localeCompare(a.recordedAt||"")||b.matchNumber-a.matchNumber).slice(0,4);
+ root.innerHTML=recent.map(m=>{
+  const t=tournamentById(m.tournamentId),a=playerById(m.playerA),b=playerById(m.playerB),winner=playerById(m.winnerId);
+  const scores=(Array.isArray(m.scoreGames)?m.scoreGames:[]).map(g=>Array.isArray(g)?`${g[0]}–${g[1]}`:"").filter(Boolean).join(" · ");
+  const round={R32:"ROUND OF 32",R16:"ROUND OF 16",QF:"QUARTER-FINAL",SF:"SEMI-FINAL",F:"FINAL"}[m.roundCode]||m.roundCode||"MATCH RESULT";
+  return `<article class="home-match-card"><div class="home-match-meta"><span>${esc(t?.name||"OWT TOURNAMENT")}</span><span>${esc(round)}</span></div><div class="home-match-pair"><div class="home-match-player ${winner?.id===a?.id?"winner":""}">${a?flagBadge(a.countryCode):""}<span class="name">${esc(a?.name||"TBD")}</span></div><div class="home-match-score">${esc(scores||"VS")}<small>${winner?"FINAL SCORE":"RESULT PENDING"}</small></div><div class="home-match-player ${winner?.id===b?.id?"winner":""}"><span class="name">${esc(b?.name||"TBD")}</span>${b?flagBadge(b.countryCode):""}</div></div></article>`;
+ }).join("")||'<div class="hint">No match results have been published yet. Official scores will appear here after they are recorded.</div>';
+}
+function renderHomeRanking(){
+ const root=$("homeRankingList");if(!root)return;
+ const rows=getRankings().slice(0,5);
+ root.innerHTML=rows.map((x,i)=>`<div class="home-rank-row"><span class="home-rank-number">${String(i+1).padStart(2,"0")}</span>${avatarHTML(x.player,"avatar home-rank-avatar")}<div class="home-rank-name"><b>${esc(x.player.name)}</b><small>${flagBadge(x.player.countryCode)} ${esc(countryName(x.player.countryCode,x.player.countryName))}</small></div><span class="home-rank-points">${x.points.toLocaleString()}</span></div>`).join("")||'<div class="hint">Ranking standings will appear after certified tournament results are published.</div>';
 }
 function newsCard(n){
  const categories={announcement:"ANNOUNCEMENT",tournament:"TOURNAMENT",results:"MATCH RESULTS",coming_soon:"COMING SOON",general:"OWT NEWS"};
@@ -356,6 +535,8 @@ function applySiteSettings(){
   document.querySelector("footer").style.display=s.site_enabled?"":"none";
   document.querySelector("header").style.display=s.site_enabled?"":"none";
   document.querySelector(".topline").style.display=s.site_enabled?"":"none";
+  const utility=document.querySelector(".utility-bar");if(utility)utility.style.display=s.site_enabled?"":"none";
+  const dock=document.querySelector(".mobile-dock");if(dock)dock.style.display=s.site_enabled?"":"none";
   if(announcement)announcement.hidden=!s.site_enabled || announcement.hidden;
  }
 }
@@ -478,4 +659,21 @@ loadPublicData();
 refreshTimer=window.setInterval(()=>loadPublicData({quiet:true}),60000);
 </script>
 <script src="owt-banner-widget.js"></script>
+<nav class="mobile-dock" aria-label="Quick navigation">
+ <button class="dock-item active" data-page="home" aria-label="Home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg><span>HOME</span></button>
+ <button class="dock-item" data-page="tournaments" aria-label="Tour"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14zM4 9h16M9 5v14M15 5v14"/></svg><span>TOUR</span></button>
+ <button class="dock-item" data-page="results" aria-label="Matches"><svg viewBox="0 0 24 24"><path d="M4 18V6m0 12h16M8 15l3-4 3 2 5-7"/></svg><span>MATCHES</span></button>
+ <button class="dock-item" data-page="rankings" aria-label="Rankings"><svg viewBox="0 0 24 24"><path d="M5 20V11h4v9M10 20V5h4v15M15 20v-8h4v8M3 20h18"/></svg><span>RANKING</span></button>
+ <button class="dock-item" id="dockMenu" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>MENU</span></button>
+</nav>
+<script>
+// V10 mobile navigation state follows the existing page router.
+function syncDock(name){document.querySelectorAll('.dock-item[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));}
+const originalShowPage=showPage;
+showPage=function(name){originalShowPage(name);syncDock(name);};
+const dockMenu=document.getElementById('dockMenu');
+document.querySelectorAll('.dock-item[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+if(dockMenu)dockMenu.addEventListener('click',()=>{const nav=document.getElementById('navlinks');nav.classList.toggle('open');window.scrollTo({top:0,behavior:'smooth'});});
+if(typeof state!=='undefined' && state.siteSettings && state.siteSettings.site_enabled===false){const dock=document.querySelector('.mobile-dock');if(dock)dock.style.display='none';}
+</script>
 </body></html>
