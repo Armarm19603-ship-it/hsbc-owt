@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>OWT MASTER ADMIN CENTER</title>
+<style>
+:root{--bg:#090d18;--panel:#151c2d;--panel2:#101726;--line:#303b52;--gold:#e1c16b;--gold2:#f3dda0;--text:#f6f4ef;--muted:#a8b1c2;--green:#48c99a;--red:#ff8c9c}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#342b50 0,#101729 42%,var(--bg) 78%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1400px;margin:auto;padding:16px 14px 40px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 2px 18px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:48px;height:48px;border:1px solid #8b7543;border-radius:14px;display:grid;place-items:center;color:var(--gold);font-weight:900;letter-spacing:1px;background:#171b28}
+.brand strong{display:block;color:var(--gold);font-size:clamp(15px,3vw,22px);letter-spacing:1px}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:4px}
+.status{font-size:11px;border:1px solid var(--line);padding:8px 11px;border-radius:22px;color:var(--muted);white-space:nowrap}
+h1{font-size:clamp(26px,5vw,42px);margin:24px 0 6px}
+.sub{color:var(--muted);margin:0 0 20px;line-height:1.5}
+.login{max-width:480px;margin:35px auto;background:linear-gradient(145deg,#1a2335,#111827);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 50px #0005}
+.eyebrow{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:800}
+label{display:block;color:#c8d0dd;font-size:13px;margin:15px 0 7px}
+input{width:100%;padding:14px;border:1px solid #3b4962;border-radius:11px;background:#0a1120;color:white;font:inherit}
+button{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--line);border-radius:11px;padding:12px 16px;font-weight:750}
+.gold{background:linear-gradient(100deg,#c5a14e,#f0d993);border:0;color:#171717}
+.secondary{background:#222c40;color:#f5f5f5}
+.wide{width:100%;margin-top:18px}
+.error{display:none;margin-top:14px;padding:12px;border-radius:10px;background:#3c202b;border:1px solid #804252;color:#ffd2da;line-height:1.5;font-size:13px;white-space:pre-wrap}
+.hidden{display:none!important}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.stat{padding:15px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#1a2335,#111827)}
+.stat span{display:block;color:var(--muted);font-size:11px;letter-spacing:1px}
+.stat b{display:block;color:var(--gold);font-size:23px;margin-top:6px}
+.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:18px 0 12px}
+.nav button{background:#171f31;border:1px solid var(--line);color:#e8eaf0;border-radius:13px;padding:14px 10px;text-align:left;min-height:72px}
+.nav button.active{border-color:var(--gold);background:#2a281f;color:var(--gold2);box-shadow:inset 0 0 0 1px #806b3d}
+.nav b{display:block;font-size:13px}
+.nav small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+.frame-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0}
+.frame-head strong{color:var(--gold);font-size:14px;letter-spacing:1px}
+.frame-head .btn{padding:9px 12px;font-size:12px}
+.framebox{background:#0c1220;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+iframe{display:block;width:100%;height:78vh;min-height:650px;border:0;background:#0b1020}
+.note{color:var(--muted);font-size:12px;line-height:1.6;margin:13px 2px}
+.logout{background:#292333;border-color:#5a4656;color:#ffd9df}
+@media(max-width:650px){
+ .wrap{padding:10px 9px 28px}
+ header{align-items:flex-start}
+ .logo{width:40px;height:40px}
+ .status{font-size:9px;padding:7px 8px}
+ .stats{gap:7px}
+ .stat{padding:11px}
+ .stat b{font-size:19px}
+ .nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .nav button{padding:11px 8px;min-height:76px}
+ .nav b{font-size:11px}
+ .nav small{font-size:9px}
+ iframe{height:76vh;min-height:600px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div class="brand"><div class="logo">OWT</div><div><strong>OCEAN WORLD TOUR</strong><small>MASTER ADMIN CENTER</small></div></div>
+ <div class="status" id="status">CHECKING SESSION…</div>
+</header>
+
+<section id="loginView" class="login">
+ <div class="eyebrow">AUTHORIZED ADMINISTRATORS ONLY</div>
+ <h2>OWT ADMIN LOGIN</h2>
+ <p class="sub">เข้าสู่ระบบด้วยบัญชีผู้ดูแล Supabase ของ OWT เพื่อเปิดศูนย์ควบคุมกลาง</p>
+ <form id="loginForm">
+  <label for="email">อีเมลผู้ดูแลระบบ</label>
+  <input id="email" type="email" autocomplete="username" required placeholder="กรอกอีเมล Supabase">
+  <label for="password">รหัสผ่าน</label>
+  <input id="password" type="password" autocomplete="current-password" required placeholder="กรอกรหัสผ่าน">
+  <button class="btn gold wide" id="loginBtn" type="submit">เข้าสู่ OWT MASTER ADMIN</button>
+ </form>
+ <div class="error" id="loginError"></div>
+</section>
+
+<section id="adminView" class="hidden">
+ <h1>OWT MASTER ADMIN</h1>
+ <p class="sub">ศูนย์ควบคุมเว็บไซต์และการแข่งขัน · ผู้ดูแล <b id="adminEmail"></b></p>
+ <div class="stats">
+  <div class="stat"><span>PLAYERS</span><b id="playersCount">—</b></div>
+  <div class="stat"><span>TOURNAMENTS</span><b id="eventsCount">—</b></div>
+  <div class="stat"><span>MATCH RESULTS</span><b id="matchesCount">—</b></div>
+ </div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="admin.html"><b>① PLAYER MANAGEMENT</b><small>เพิ่ม / แก้ไขนักกีฬา</small></button>
+  <button data-page="owt-tournament_2.html"><b>② TOURNAMENT MANAGER</b><small>จับฉลาก / สกอร์ / Ranking</small></button>
+  <button data-page="news-manager.html"><b>③ NEWS CENTER</b><small>เพิ่ม / แก้ไข / เผยแพร่ข่าว</small></button>
+  <button data-page="index.html"><b>④ OFFICIAL WEBSITE</b><small>ดูหน้าเว็บไซต์สาธารณะ</small></button>
+  <button data-page="site-control.html"><b>⑤ WEBSITE CONTROL</b><small>เปิด–ปิด / ประกาศ / ซ่อนข้อมูล</small></button>
+ </nav>
+ <div class="frame-head">
+  <strong id="currentTitle">PLAYER MANAGEMENT</strong>
+  <div style="display:flex;gap:7px">
+   <button class="btn secondary" id="openNew">เปิดเต็มหน้า ↗</button>
+   <button class="btn logout" id="logoutBtn">ออกจากระบบ</button>
+  </div>
+ </div>
+ <div class="framebox"><iframe id="workspace" title="OWT Admin Workspace" src="about:blank"></iframe></div>
+ <p class="note">หมายเหตุ: ทุกส่วนใช้ Supabase Project เดียวกันและ session ผู้ดูแลเดียวกัน · Website Control ใช้กำหนดการเผยแพร่หน้าเว็บและประกาศ โดยไม่ลบข้อมูลการแข่งขัน</p>
+</section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{'use strict';
+ const SUPABASE_URL='https://soezkybqsrjgqbyxokdk.supabase.co';
+ const SUPABASE_KEY='sb_publishable_65ASq1FDolpTAu3b8LDAgg_G5cNLYQ9';
+ const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+ const $=id=>document.getElementById(id);
+ let currentPage='admin.html';
+ const titles={
+  'admin.html':'PLAYER MANAGEMENT',
+  'owt-tournament_2.html':'TOURNAMENT MANAGER',
+  'news-manager.html':'OWT NEWS CENTER',
+  'index.html':'OFFICIAL WEBSITE',
+  'site-control.html':'WEBSITE CONTROL'
+ };
+ function showError(message){$('loginError').style.display='block';$('loginError').textContent=message}
+ function clearError(){$('loginError').style.display='none';$('loginError').textContent=''}
+ async function verifyAdmin(){
+  const {data,error}=await db.rpc('is_owt_admin');
+  if(error)throw new Error('ตรวจสอบสิทธิ์ผู้ดูแลไม่สำเร็จ: '+error.message);
+  if(data!==true)throw new Error('บัญชีนี้ยังไม่มีสิทธิ์ OWT Admin ในตาราง owt_admins');
+ }
+ async function loadStats(){
+  const specs=[['owt_players','playersCount'],['owt_tournaments','eventsCount'],['owt_match_results','matchesCount']];
+  await Promise.all(specs.map(async([table,id])=>{
+   const {count,error}=await db.from(table).select('*',{count:'exact',head:true});
+   $(id).textContent=error?'—':String(count??0);
+  }));
+ }
+ function selectPage(page){
+  currentPage=page;
+  $('workspace').src=page;
+  $('currentTitle').textContent=titles[page]||'OWT ADMIN';
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ }
+ async function enter(user){
+  await verifyAdmin();
+  $('adminEmail').textContent=user.email||'';
+  $('loginView').classList.add('hidden');
+  $('adminView').classList.remove('hidden');
+  $('status').textContent='AUTHENTICATED · ADMIN';
+  await loadStats();
+  selectPage('admin.html');
+ }
+ $('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();clearError();
+  $('loginBtn').disabled=true;$('loginBtn').textContent='กำลังเข้าสู่ระบบ…';
+  const {data,error}=await db.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});
+  try{
+   if(error)throw error;
+   await enter(data.user);
+  }catch(err){
+   await db.auth.signOut();
+   showError(err.message||String(err));
+  }finally{
+   $('loginBtn').disabled=false;$('loginBtn').textContent='เข้าสู่ OWT MASTER ADMIN';
+  }
+ });
+ document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>selectPage(b.dataset.page)));
+ $('openNew').addEventListener('click',()=>window.open(currentPage,'_blank','noopener'));
+ $('logoutBtn').addEventListener('click',async()=>{
+  await db.auth.signOut();
+  $('workspace').src='about:blank';
+  $('adminView').classList.add('hidden');
+  $('loginView').classList.remove('hidden');
+  $('password').value='';
+  $('status').textContent='SIGNED OUT';
+ });
+ db.auth.getSession().then(async({data,error})=>{
+  if(error){$('status').textContent='SESSION ERROR';return}
+  if(data.session){
+   try{await enter(data.session.user)}
+   catch(err){await db.auth.signOut();$('status').textContent='LOGIN REQUIRED';showError(err.message||String(err))}
+  }else $('status').textContent='LOGIN REQUIRED';
+ });
+})();
+</script>
+</body>
+</html>
