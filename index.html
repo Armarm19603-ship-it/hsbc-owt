@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OWT | Ocean World Tour — Official Website</title>
+<title>OWT | Ocean World Tour — Official Website V10.3</title>
 <meta name="description" content="Explore Ocean World Tour — tournaments, athletes, official draws, match results and world rankings.">
 <meta name="theme-color" content="#080b13">
 <meta property="og:title" content="Ocean World Tour | One Tour. One World.">
@@ -226,6 +226,96 @@ footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.foot
  .owt-game-scores span{min-width:18px;font-size:14px}
 }
 
+
+/* ===== OWT TOURNAMENT DETAIL — BWF-INSPIRED APP VIEW ===== */
+#page-tournament-detail{background:#08090c;min-height:82vh;color:#f5f5f5}
+.event-card[data-open-tournament]{cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+.event-card[data-open-tournament]:hover,.event-card[data-open-tournament]:focus-visible{transform:translateY(-3px);border-color:#d8b66a88;box-shadow:0 12px 28px #0006;outline:none}
+.td-shell{max-width:1080px;margin:0 auto;padding:20px 4% 110px}
+.td-back{display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:#c9c9ce;padding:8px 0 16px;font-size:12px;font-weight:800;letter-spacing:.8px}
+.td-back span{font-size:25px;line-height:12px}
+.td-hero{min-height:320px;border-radius:22px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:28px;background:linear-gradient(180deg,#24272d 0%,#141518 55%,#08090c 100%);background-position:center;background-size:cover;isolation:isolate}
+.td-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#050609dd 0%,#0506098c 52%,#05060930 100%),linear-gradient(0deg,#050609 0%,transparent 76%)}
+.td-hero:after{content:"OWT";position:absolute;right:-15px;top:-35px;font-size:clamp(130px,25vw,250px);font-weight:1000;letter-spacing:-15px;color:#ffffff0b;z-index:-1;line-height:1}
+.td-hero-content{max-width:720px}
+.td-event-mark{width:76px;height:76px;border-radius:18px;background:#f4f4f4;color:#151515;display:grid;place-items:center;font-weight:1000;font-size:20px;letter-spacing:-1px;margin-bottom:18px;box-shadow:0 8px 30px #0007}
+.td-tier{display:inline-flex;align-items:center;gap:7px;color:#f5d27c;background:#1b1b1ed9;border:1px solid #d8b66a66;border-radius:30px;padding:7px 12px;font-size:10px;font-weight:950;letter-spacing:1.6px}
+.td-hero h1{font-size:clamp(30px,5.8vw,54px);line-height:1.05;letter-spacing:-1.5px;margin:14px 0 8px;font-weight:950;max-width:760px}
+.td-location{color:#c3c5ca;font-size:14px;margin:0 0 15px}
+.td-meta{display:flex;gap:9px;flex-wrap:wrap}
+.td-meta span{font-size:10px;color:#e1e1e4;background:#ffffff18;border:1px solid #ffffff20;border-radius:7px;padding:8px 10px;font-weight:800;letter-spacing:.5px}
+.td-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:24px 0 26px}
+.td-tabs button{border:0;border-radius:30px;background:#242528;color:#e7e7e9;padding:13px 10px;font-size:12px;font-weight:900;letter-spacing:.8px}
+.td-tabs button.active{background:#d71920;color:#fff;box-shadow:0 7px 22px #d7192038}
+.td-tab-panel[hidden]{display:none!important}
+.td-section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:10px 0 16px}
+.td-section-heading h2{font-size:22px;margin:0;font-weight:500;letter-spacing:-.3px}
+.td-section-heading h2 strong{font-weight:950}
+.td-muted{color:#999da6;font-size:12px;line-height:1.7}
+.td-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.td-info-card{background:#1b1c1f;border:1px solid #ffffff12;border-radius:15px;padding:18px}
+.td-info-card small{display:block;color:#999da6;font-size:10px;letter-spacing:1.2px;font-weight:900;margin-bottom:8px}
+.td-info-card b{font-size:17px;line-height:1.35;overflow-wrap:anywhere}
+.td-info-copy{margin-top:15px;background:linear-gradient(130deg,#1d1e21,#151619);border:1px solid #ffffff12;border-radius:15px;padding:19px;color:#c2c4ca;font-size:13px;line-height:1.8}
+.td-draw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.td-draw-match{background:#1b1c1f;border:1px solid #ffffff14;border-radius:15px;padding:16px}
+.td-draw-match h3{font-size:11px;color:#aaa;margin:0 0 13px;letter-spacing:1px}
+.td-draw-player{display:flex;align-items:center;gap:9px;padding:10px 0;font-size:13px;font-weight:750}
+.td-draw-player+.td-draw-player{border-top:1px solid #ffffff12}
+.td-draw-player .flag{width:27px;height:18px}
+.td-round-filters,.td-day-filters{display:flex;gap:8px;overflow-x:auto;padding:3px 0 12px;scrollbar-width:none}
+.td-round-filters::-webkit-scrollbar,.td-day-filters::-webkit-scrollbar{display:none}
+.td-round-filters button{flex:0 0 auto;border:0;border-radius:8px;background:#242528;color:#bfc0c4;padding:10px 13px;font-size:10px;font-weight:900;letter-spacing:.5px}
+.td-round-filters button.active{background:#d71920;color:#fff}
+.td-day-filters button{flex:0 0 76px;border:0;border-radius:12px;background:#242528;color:#eee;padding:11px 7px;font-size:11px;font-weight:900}
+.td-day-filters button small{display:block;color:#a7a7aa;font-weight:500;margin-top:3px}
+.td-day-filters button.active{background:#d71920;color:#fff}
+.td-day-filters button.active small{color:#ffe0e0}
+.td-match-list{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.td-match-card{background:#1b1c1f;border:1px solid #ffffff12;border-radius:20px;overflow:hidden}
+.td-match-head{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#26272a;padding:15px 18px;font-size:12px;font-weight:900}
+.td-match-head span:last-child{background:#f09a9a;color:#171717;padding:7px 11px;border-radius:7px;white-space:nowrap}
+.td-match-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:18px}
+.td-match-row+.td-match-row{border-top:1px solid #ffffff0c}
+.td-match-athlete{display:flex;align-items:center;gap:11px;min-width:0;font-size:14px;color:#d0d0d3}
+.td-match-athlete .flag{width:30px;height:21px;border-radius:50%;flex:0 0 auto}
+.td-match-athlete strong{font-weight:650;overflow-wrap:anywhere}
+.td-match-row.winner .td-match-athlete strong{color:#fff}
+.td-match-scores{display:flex;gap:9px;align-items:center}
+.td-match-scores span{min-width:24px;text-align:center;font-size:17px;font-weight:900;color:#eee}
+.td-match-row.winner .td-match-scores span{color:#e02a2e}
+.td-match-foot{border-top:1px solid #ffffff16;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#bcbec4;font-size:11px;letter-spacing:.4px}
+.td-match-foot strong{color:#f1f1f1;font-size:11px;white-space:nowrap}
+.td-empty{border:1px dashed #55565b;border-radius:15px;padding:34px 20px;text-align:center;color:#aeb0b7;background:#141518;font-size:13px;line-height:1.8}
+.td-media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.td-media-card{background:#1b1c1f;border:1px solid #ffffff12;border-radius:15px;overflow:hidden}
+.td-media-card img{width:100%;height:190px;object-fit:cover;display:block;background:#28292d}
+.td-media-card div{padding:15px}
+.td-media-card small{color:#e3bc69;font-size:9px;letter-spacing:1px;font-weight:900}
+.td-media-card h3{font-size:15px;line-height:1.35;margin:7px 0}
+.td-media-card p{color:#aeb0b7;font-size:11px;line-height:1.6;margin:0}
+@media(max-width:650px){
+ .td-shell{padding:12px 4% 105px}
+ .td-hero{min-height:360px;padding:20px;border-radius:18px}
+ .td-event-mark{width:66px;height:66px;border-radius:15px;margin-bottom:15px}
+ .td-hero h1{font-size:32px}
+ .td-tabs{gap:7px;margin:19px 0 22px}
+ .td-tabs button{font-size:11px;padding:12px 4px}
+ .td-info-grid,.td-draw-grid,.td-media-grid{grid-template-columns:1fr}
+ .td-info-card{padding:15px}
+ .td-info-card b{font-size:15px}
+ .td-section-heading h2{font-size:19px}
+ .td-match-head{padding:13px 14px;font-size:10px}
+ .td-match-row{padding:15px 13px;gap:8px}
+ .td-match-athlete{font-size:12px;gap:8px}
+ .td-match-athlete .flag{width:25px;height:17px}
+ .td-match-scores{gap:5px}
+ .td-match-scores span{min-width:19px;font-size:15px}
+ .td-match-foot{padding:12px 13px;font-size:9px}
+ .td-match-foot strong{font-size:9px}
+ .td-media-card img{height:170px}
+}
+
 </style>
 </head>
 <body>
@@ -306,6 +396,54 @@ footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.foot
 <section class="page" id="page-tournaments">
  <div class="page-hero"><div class="container"><div class="kicker">THE OWT GLOBAL CIRCUIT</div><h1>TOURNAMENTS</h1><p>Explore registered events of the Ocean World Tour 2027 season.</p></div></div>
  <div class="container content"><div class="cards" id="tournamentGrid"></div></div>
+</section>
+
+<section class="page" id="page-tournament-detail">
+ <div class="td-shell">
+  <button class="td-back" type="button" onclick="closeTournamentDetail()"><span>‹</span> BACK TO TOURNAMENTS</button>
+  <div class="td-hero" id="tdHero">
+   <div class="td-hero-content">
+    <div class="td-event-mark" id="tdEventMark">OWT</div>
+    <span class="td-tier" id="tdTier">OWT TOUR EVENT</span>
+    <h1 id="tdName">TOURNAMENT NAME</h1>
+    <p class="td-location" id="tdLocation">Location to be announced</p>
+    <div class="td-meta"><span id="tdDate">DATE TBA</span><span id="tdStatus">UPCOMING</span></div>
+   </div>
+  </div>
+  <div class="td-tabs" role="tablist" aria-label="Tournament sections">
+   <button class="active" type="button" data-tournament-tab="info" aria-selected="true">INFO</button>
+   <button type="button" data-tournament-tab="draws" aria-selected="false">DRAWS</button>
+   <button type="button" data-tournament-tab="matches" aria-selected="false">MATCHES</button>
+   <button type="button" data-tournament-tab="media" aria-selected="false">MEDIA</button>
+  </div>
+  <section class="td-tab-panel" id="tdPanelInfo">
+   <div class="td-section-heading"><h2>TOURNAMENT <strong>INFO</strong></h2><span class="td-muted">OFFICIAL OWT EVENT</span></div>
+   <div class="td-info-grid" id="tdInfoGrid"></div>
+   <div class="td-info-copy" id="tdInfoCopy">Tournament information published by Ocean World Tour.</div>
+  </section>
+  <section class="td-tab-panel" id="tdPanelDraws" hidden>
+   <div class="td-section-heading"><h2>OFFICIAL <strong>DRAWS</strong></h2><span class="td-muted" id="tdDrawStatus">DRAW STATUS</span></div>
+   <div class="td-draw-grid" id="tdDrawGrid"></div>
+  </section>
+  <section class="td-tab-panel" id="tdPanelMatches" hidden>
+   <div class="td-section-heading"><h2>ALL <strong>MATCHES</strong></h2><span class="td-muted" id="tdMatchCount">0 MATCHES</span></div>
+   <div class="td-day-filters" id="tdDayFilters"></div>
+   <p class="td-muted" style="margin:0 0 8px">Date filters use the result-recorded date currently stored in the OWT database.</p>
+   <div class="td-round-filters" id="tdRoundFilters">
+    <button class="active" type="button" data-detail-round="ALL">ALL</button>
+    <button type="button" data-detail-round="R32">R32</button>
+    <button type="button" data-detail-round="R16">R16</button>
+    <button type="button" data-detail-round="QF">QUARTERFINALS</button>
+    <button type="button" data-detail-round="SF">SEMIFINALS</button>
+    <button type="button" data-detail-round="F">FINAL</button>
+   </div>
+   <div class="td-match-list" id="tdMatchList"></div>
+  </section>
+  <section class="td-tab-panel" id="tdPanelMedia" hidden>
+   <div class="td-section-heading"><h2>EVENT <strong>MEDIA</strong></h2><span class="td-muted">NEWS & GALLERY</span></div>
+   <div class="td-media-grid" id="tdMediaGrid"></div>
+  </section>
+ </div>
 </section>
 
 <section class="page" id="page-results">
@@ -409,7 +547,7 @@ footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.foot
 "use strict";
 
 /*
- * OWT OFFICIAL WEBSITE V10.2 — PUBLIC READ-ONLY DATABASE CLIENT
+ * OWT OFFICIAL WEBSITE V10.3 — TOURNAMENT DETAIL + PUBLIC READ-ONLY DATABASE CLIENT
  * This file uses only the Supabase publishable/anon key.
  * All writes remain in the authenticated OWT Admin Manager.
  */
@@ -443,7 +581,7 @@ const FINISH_LABELS = {
 const FINISH_ORDER = ["champion","runner_up","semifinal","quarterfinal","round_of_16","round_of_32"];
 const $ = id => document.getElementById(id);
 const DEFAULT_SITE_SETTINGS = {site_enabled:true,show_players:true,show_tournaments:true,show_results:true,show_rankings:true,show_draw:true,announcement_enabled:false,announcement_title:"",announcement_body:""};
-const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], news:[], selectedDrawId:"", selectedResultsId:"", selectedMatchRound:"ALL", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
+const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], news:[], selectedDrawId:"", selectedResultsId:"", selectedMatchRound:"ALL", selectedTournamentId:"", activeTournamentTab:"info", detailMatchDate:"ALL", detailMatchRound:"ALL", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
 let activeRankingCategory = "MS";
 let refreshTimer = null;
 
@@ -489,10 +627,10 @@ function getRankings(){
 function getRank(id){return getRankings().findIndex(x=>x.player.id===id)+1;}
 function eventCard(t){
  const status=t.certified?"RESULTS CERTIFIED":(t.status==="Completed"?"AWAITING RESULT ENTRY":String(t.status||"Upcoming").toUpperCase());
- return `<article class="event-card ${Number(t.tier)===1000?"featured":""}">
+ return `<article class="event-card ${Number(t.tier)===1000?"featured":""}" data-open-tournament="${esc(t.id)}" role="button" tabindex="0" aria-label="Open ${esc(t.name)} details">
   <div><div class="tier">ULTRA ${esc(t.tier)}</div><h3>${esc(String(t.name||"").toUpperCase())}</h3>
   <p>${esc([t.city,countryName(t.countryCode,t.countryName)].filter(Boolean).join(" · ")||"Venue to be announced")}</p></div>
-  <div class="event-foot"><span>${esc(formatDate(t.date))}</span><span>${t.certified?'<span style="color:var(--green)">CERTIFIED</span>':esc(status)}</span></div>
+  <div class="event-foot"><span>${esc(formatDate(t.date))}</span><span>${t.certified?'<span style="color:var(--green)">CERTIFIED</span>':esc(status)} &nbsp; ↗</span></div>
  </article>`;
 }
 function renderHome(){
@@ -589,6 +727,130 @@ function renderTournaments(){
  $("tournamentGrid").innerHTML=state.tournaments.slice().sort((a,b)=>(a.date||"9999").localeCompare(b.date||"9999")).map(eventCard).join("")
   ||'<div class="panel hint">No tournaments have been published yet.</div>';
 }
+function tournamentRoundLabel(code){
+ return {R32:"ROUND OF 32",R16:"ROUND OF 16",QF:"QUARTERFINALS",SF:"SEMIFINALS",F:"FINAL"}[code]||String(code||"MATCH").toUpperCase();
+}
+function matchDateKey(value){
+ if(!value)return "";
+ const d=new Date(value);
+ if(Number.isNaN(d.getTime()))return "";
+ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+function displayDay(value){
+ const d=new Date(value+"T12:00:00");
+ return Number.isNaN(d.getTime())?value:d.toLocaleDateString("en-GB",{day:"numeric",month:"short"});
+}
+function switchTournamentTab(tab){
+ const allowed=["info","draws","matches","media"];
+ if(!allowed.includes(tab))return;
+ state.activeTournamentTab=tab;
+ document.querySelectorAll("[data-tournament-tab]").forEach(btn=>{
+  const active=btn.dataset.tournamentTab===tab;
+  btn.classList.toggle("active",active);
+  btn.setAttribute("aria-selected",active?"true":"false");
+ });
+ allowed.forEach(key=>{const panel=$("tdPanel"+key[0].toUpperCase()+key.slice(1));if(panel)panel.hidden=key!==tab;});
+ if(tab==="matches")renderTournamentMatches();
+ if(tab==="draws")renderTournamentDraw();
+ if(tab==="media")renderTournamentMedia();
+}
+function openTournament(id){
+ const t=tournamentById(id);
+ if(!t){toast("Tournament details are not available yet");return;}
+ state.selectedTournamentId=id;
+ state.detailMatchDate="ALL";
+ state.detailMatchRound="ALL";
+ state.activeTournamentTab="info";
+ history.pushState({owtPage:"tournament-detail",tournamentId:id},"",`#tournament=${encodeURIComponent(id)}`);
+ showPage("tournament-detail",{fromHistory:true});
+}
+function closeTournamentDetail(){
+ history.pushState({owtPage:"tournaments"},"","#tournaments");
+ showPage("tournaments",{fromHistory:true});
+}
+function renderTournamentDetail(){
+ const t=tournamentById(state.selectedTournamentId);
+ if(!t)return;
+ const related=state.news.filter(n=>`${n.title||""} ${n.body||""}`.toLowerCase().includes(String(t.name||"").toLowerCase()));
+ const heroImage=safePortrait(related.find(n=>n.image_url)?.image_url||"");
+ const hero=$("tdHero");
+ hero.style.backgroundImage=heroImage
+  ?`linear-gradient(180deg,#08090c22,#08090cdd),url("${heroImage.replace(/"/g,"%22")}")`
+  :"linear-gradient(135deg,#34363b 0%,#1b1c20 48%,#090a0d 100%)";
+ $("tdEventMark").textContent=initials(t.name)||"OWT";
+ $("tdTier").textContent=`OWT TOUR · ULTRA ${t.tier||"—"}`;
+ $("tdName").textContent=t.name||"OWT TOURNAMENT";
+ $("tdLocation").textContent=[t.city,countryName(t.countryCode,t.countryName)].filter(Boolean).join(", ")||"Venue to be announced";
+ $("tdDate").textContent=formatDate(t.date);
+ $("tdStatus").textContent=t.certified?"RESULTS CERTIFIED":String(t.status||"UPCOMING").toUpperCase();
+ const info=[
+  ["TOURNAMENT LEVEL",`ULTRA ${t.tier||"—"}`],
+  ["EVENT DATE",formatDate(t.date)],
+  ["HOST CITY",t.city||"To be announced"],
+  ["COUNTRY",countryName(t.countryCode,t.countryName)],
+  ["TOURNAMENT STATUS",t.certified?"Results certified":(t.status||"Upcoming")],
+  ["OFFICIAL DRAW",state.draws.some(d=>d.tournamentId===t.id&&d.status==="locked")?"Published":"Not yet published"]
+ ];
+ $("tdInfoGrid").innerHTML=info.map(([label,value])=>`<article class="td-info-card"><small>${esc(label)}</small><b>${esc(value)}</b></article>`).join("");
+ $("tdInfoCopy").textContent=`${t.name} is part of the Ocean World Tour circuit. Tournament information shown here is based on the event details currently published in the OWT database. Draws, match scores and media will appear as they are officially added.`;
+ renderTournamentDraw();
+ renderTournamentMatches();
+ renderTournamentMedia();
+ switchTournamentTab("info");
+}
+function renderTournamentDraw(){
+ const root=$("tdDrawGrid");if(!root)return;
+ const id=state.selectedTournamentId;
+ const draw=state.draws.find(d=>d.tournamentId===id&&d.status==="locked");
+ const entries=draw?state.drawEntries.filter(e=>e.drawId===draw.id).sort((a,b)=>a.matchNumber-b.matchNumber||a.slotNumber-b.slotNumber):[];
+ $("tdDrawStatus").textContent=draw?"OFFICIAL DRAW PUBLISHED":"AWAITING PUBLICATION";
+ if(!draw||!entries.length){root.innerHTML='<div class="td-empty" style="grid-column:1/-1">The official draw has not been published for this tournament yet.<br>Once confirmed by OWT administrators, the player pairings will appear here.</div>';return;}
+ const matchNumbers=[...new Set(entries.map(e=>e.matchNumber))].sort((a,b)=>a-b);
+ root.innerHTML=matchNumbers.map(n=>{
+  const pair=[1,2].map(slot=>entries.find(e=>e.matchNumber===n&&e.slotNumber===slot)).map(e=>e?playerById(e.playerId):null);
+  return `<article class="td-draw-match"><h3>OFFICIAL DRAW · MATCH ${String(n).padStart(2,"0")}</h3>${pair.map(p=>`<div class="td-draw-player">${p?flagBadge(p.countryCode):""}<span>${esc(p?.name||"TO BE CONFIRMED")}</span></div>`).join("")}</article>`;
+ }).join("");
+}
+function renderTournamentMatches(){
+ const root=$("tdMatchList");if(!root)return;
+ const id=state.selectedTournamentId;
+ const all=state.matches.filter(m=>m.tournamentId===id);
+ const dates=[...new Set(all.map(m=>matchDateKey(m.recordedAt)).filter(Boolean))].sort();
+ if(state.detailMatchDate!=="ALL"&&!dates.includes(state.detailMatchDate))state.detailMatchDate="ALL";
+ const dateButtons=[`<button type="button" class="${state.detailMatchDate==="ALL"?"active":""}" data-detail-date="ALL">ALL<small>DATES</small></button>`,...dates.map(d=>`<button type="button" class="${state.detailMatchDate===d?"active":""}" data-detail-date="${esc(d)}">${esc(displayDay(d))}<small>${esc(new Date(d+"T12:00:00").toLocaleDateString("en-GB",{weekday:"short"}))}</small></button>`)];
+ $("tdDayFilters").innerHTML=dateButtons.join("");
+ document.querySelectorAll("[data-detail-round]").forEach(btn=>btn.classList.toggle("active",btn.dataset.detailRound===state.detailMatchRound));
+ const filtered=all.filter(m=>(state.detailMatchDate==="ALL"||matchDateKey(m.recordedAt)===state.detailMatchDate)&&(state.detailMatchRound==="ALL"||m.roundCode===state.detailMatchRound)).sort((a,b)=>(a.recordedAt||"").localeCompare(b.recordedAt||"")||a.roundOrder-b.roundOrder||a.matchNumber-b.matchNumber);
+ $("tdMatchCount").textContent=`${filtered.length} MATCH${filtered.length===1?"":"ES"}`;
+ root.innerHTML=filtered.map(m=>{
+  const a=playerById(m.playerA),b=playerById(m.playerB),winner=playerById(m.winnerId);
+  const games=Array.isArray(m.scoreGames)?m.scoreGames.filter(g=>Array.isArray(g)&&g.length>=2):[];
+  const row=(p,side)=>`<div class="td-match-row ${winner&&winner.id===p?.id?"winner":""}"><div class="td-match-athlete">${p?flagBadge(p.countryCode):""}<strong>${esc(p?.name||"TBD")}</strong></div><div class="td-match-scores">${games.length?games.map(g=>`<span>${esc(g[side])}</span>`).join(""):'<span>—</span>'}</div></div>`;
+  const date=m.recordedAt?new Date(m.recordedAt):null;
+  const dateLabel=date&&!Number.isNaN(date.getTime())?date.toLocaleDateString("en-GB",{day:"numeric",month:"short"}):"DATE TBA";
+  return `<article class="td-match-card"><div class="td-match-head"><span>RESULT · ${esc(tournamentById(id)?.name||"OWT EVENT")}</span><span>MATCH ${String(m.matchNumber||0).padStart(2,"0")}</span></div>${row(a,0)}${row(b,1)}<div class="td-match-foot"><span>MS&nbsp; · &nbsp;${esc(tournamentRoundLabel(m.roundCode))} &nbsp;·&nbsp; ${esc(dateLabel)}</span><strong>${winner?"OFFICIAL RESULT":"RESULT RECORDED"}</strong></div></article>`;
+ }).join("")||'<div class="td-empty">No match results have been published for this tournament yet.<br>Official scores will appear here after they are recorded by OWT.</div>';
+}
+function renderTournamentMedia(){
+ const root=$("tdMediaGrid");if(!root)return;
+ const t=tournamentById(state.selectedTournamentId);if(!t)return;
+ const related=state.news.filter(n=>`${n.title||""} ${n.body||""}`.toLowerCase().includes(String(t.name||"").toLowerCase()));
+ root.innerHTML=related.map(n=>{
+  const imageUrl=safePortrait(n.image_url||"");
+  return `<article class="td-media-card">${imageUrl?`<img src="${esc(imageUrl)}" alt="${esc(n.title)}" loading="lazy">`:'<div style="height:150px;background:linear-gradient(135deg,#292a2e,#111216);display:grid;place-items:center;color:#d71920;font-weight:1000;font-size:25px">OWT</div>'}<div><small>${esc(n.category||"OWT NEWS")}</small><h3>${esc(n.title||"Tournament update")}</h3><p>${esc(String(n.body||"").slice(0,180))}</p></div></article>`;
+ }).join("")||'<div class="td-empty" style="grid-column:1/-1">No media has been published for this tournament yet.<br>Official photos, videos and event news will appear here when added to OWT News Center.</div>';
+}
+function restoreTournamentRoute(){
+ const match=location.hash.match(/^#tournament=(.+)$/);
+ if(match){
+  const id=decodeURIComponent(match[1]);
+  if(tournamentById(id)){state.selectedTournamentId=id;showPage("tournament-detail",{fromHistory:true});return;}
+ }
+ const page=location.hash.replace(/^#/,"");
+ if(["home","tournaments","players","results","rankings","draw","news"].includes(page))showPage(page,{fromHistory:true});
+ else if(!page)showPage("home",{fromHistory:true});
+}
+
 function renderResults(){
  const select=$("resultsTournamentSelect");if(!select)return;
  const old=state.selectedResultsId;
@@ -718,17 +980,24 @@ function toggleMoreMenu(){
  if(menu.classList.contains("open"))document.querySelector("header")?.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function openRankingsPage(){window.location.href='./rankings.html';}
-function showPage(name){
- const settingKey={players:"show_players",tournaments:"show_tournaments",results:"show_results",rankings:"show_rankings",draw:"show_draw"}[name];
+function showPage(name,options={}){
+ const settingName=name==="tournament-detail"?"tournaments":name;
+ const settingKey={players:"show_players",tournaments:"show_tournaments",results:"show_results",rankings:"show_rankings",draw:"show_draw"}[settingName];
  if(settingKey && state.siteSettings[settingKey]===false){name="home";}
+ if(!options.fromHistory){
+  const hash=name==="tournament-detail"?`#tournament=${encodeURIComponent(state.selectedTournamentId)}`:`#${name}`;
+  history.replaceState({owtPage:name,tournamentId:state.selectedTournamentId||""},"",hash);
+ }
+ const activeNav=name==="tournament-detail"?"tournaments":name;
  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+name));
- document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
- document.querySelectorAll("[data-bottom-page]").forEach(b=>b.classList.toggle("active",b.dataset.bottomPage===name));
+ document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===activeNav));
+ document.querySelectorAll("[data-bottom-page]").forEach(b=>b.classList.toggle("active",b.dataset.bottomPage===activeNav));
  $("navlinks").classList.remove("open");
  window.scrollTo({top:0,behavior:"smooth"});
  if(name==="players")renderPlayers();
  if(name==="rankings")renderRankings();
  if(name==="tournaments")renderTournaments();
+ if(name==="tournament-detail")renderTournamentDetail();
  if(name==="results")renderResults();
  if(name==="draw")renderDraw();
  if(name==="news")renderNews();
@@ -737,6 +1006,21 @@ document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",(
  if(b.dataset.page==="rankings"){openRankingsPage();return;}
  showPage(b.dataset.page);
 }));
+document.addEventListener("click",e=>{
+ const card=e.target.closest("[data-open-tournament]");
+ if(card){openTournament(card.dataset.openTournament);return;}
+ const tab=e.target.closest("[data-tournament-tab]");
+ if(tab){switchTournamentTab(tab.dataset.tournamentTab);return;}
+ const date=e.target.closest("[data-detail-date]");
+ if(date){state.detailMatchDate=date.dataset.detailDate||"ALL";renderTournamentMatches();return;}
+ const round=e.target.closest("[data-detail-round]");
+ if(round){state.detailMatchRound=round.dataset.detailRound||"ALL";renderTournamentMatches();return;}
+});
+document.addEventListener("keydown",e=>{
+ const card=e.target.closest?.("[data-open-tournament]");
+ if(card&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openTournament(card.dataset.openTournament);}
+});
+window.addEventListener("popstate",restoreTournamentRoute);
 $("menuBtn").addEventListener("click",()=>$("navlinks").classList.toggle("open"));
 $("closeProfile").onclick=()=>$("profileModal").classList.remove("open");
 $("profileModal").addEventListener("click",e=>{if(e.target===$("profileModal"))$("profileModal").classList.remove("open")});
@@ -801,6 +1085,7 @@ async function loadPublicData(options={}){
   state.lastUpdated=new Date();
   state.error="";
   renderAll();
+  restoreTournamentRoute();
   showDbStatus("OWT DATABASE CONNECTED","online");
   const updated=$("dbStatus");
   if(updated)updated.title="Last successful sync: "+state.lastUpdated.toLocaleString();
