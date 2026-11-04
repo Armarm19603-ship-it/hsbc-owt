@@ -23,7 +23,7 @@ main{min-height:78vh}.page{display:none;animation:fadeIn .35s ease}.page.active{
 .hero-art{height:400px;display:grid;place-items:center;position:relative}.orbit{position:absolute;width:min(38vw,410px);aspect-ratio:1;border:1px solid #d8b66a38;border-radius:50%;box-shadow:0 0 0 28px #d8b66a08,0 0 0 65px #d8b66a05}.shuttle{width:220px;height:220px;position:relative;filter:drop-shadow(0 20px 35px #0009);animation:float 5s ease-in-out infinite}.shuttle svg{width:100%;height:100%}@keyframes float{50%{transform:translateY(-14px) rotate(4deg)}}.hero-label{position:absolute;right:1%;bottom:15px;background:#111a2ae8;border:1px solid #d8b66a70;padding:13px 18px}.hero-label small{display:block;color:var(--gold);font-size:9px;letter-spacing:1.7px}.hero-label b{font-size:12px;letter-spacing:1.2px}
 .stats{border-block:1px solid #ffffff18;background:#ffffff04}.statsrow{display:grid;grid-template-columns:repeat(4,1fr);padding:18px 0}.stat{padding:4px 22px;border-right:1px solid #ffffff18}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat b{display:block;color:var(--gold);font-size:25px}.stat small{font-size:9px;letter-spacing:1.3px;color:#9eabbd;font-weight:900}
 .section{padding:55px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}.section-head small{color:var(--gold);font-size:9px;letter-spacing:2px;font-weight:950}.section-head h2{font-size:clamp(23px,3.5vw,37px);margin:7px 0 0;letter-spacing:-1px}.link{font-size:10px;color:var(--gold2);font-weight:900;letter-spacing:1px;border-bottom:1px solid #d8b66a66;padding-bottom:5px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.event-card,.player-card,.panel{background:linear-gradient(145deg,#17243a,#101827);border:1px solid #ffffff18;border-radius:12px;overflow:hidden}.event-card{padding:21px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;position:relative}.event-card:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #d8b66a28;border-radius:50%;right:-55px;top:-60px;box-shadow:0 0 0 20px #d8b66a07}.event-card.featured{background:linear-gradient(145deg,#4b1728,#171c2b 72%);border-color:#d7193666}.tier{font-size:9px;color:var(--gold);font-weight:950;letter-spacing:2px}.event-card h3{font-size:24px;line-height:1.05;margin:12px 0 6px}.event-card p{font-size:11px;color:var(--muted);margin:0}.event-foot{border-top:1px solid #ffffff18;padding-top:12px;display:flex;justify-content:space-between;gap:8px;font-size:9px;color:#c2ccda;letter-spacing:.8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.news-card{background:linear-gradient(145deg,#17243a,#101827);border:1px solid #ffffff18;border-radius:12px;overflow:hidden}.news-card img{width:100%;height:170px;object-fit:cover;display:block}.news-card-content{padding:16px}.news-card .news-category{font-size:9px;color:var(--gold);font-weight:950;letter-spacing:1.4px}.news-card h3{font-size:17px;line-height:1.3;margin:8px 0}.news-card p{font-size:12px;line-height:1.65;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}.news-date{font-size:10px;color:#9eabbd;border-top:1px solid #ffffff18;padding-top:10px;margin-top:12px}.event-card,.player-card,.panel{background:linear-gradient(145deg,#17243a,#101827);border:1px solid #ffffff18;border-radius:12px;overflow:hidden}.event-card{padding:21px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;position:relative}.event-card:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #d8b66a28;border-radius:50%;right:-55px;top:-60px;box-shadow:0 0 0 20px #d8b66a07}.event-card.featured{background:linear-gradient(145deg,#4b1728,#171c2b 72%);border-color:#d7193666}.tier{font-size:9px;color:var(--gold);font-weight:950;letter-spacing:2px}.event-card h3{font-size:24px;line-height:1.05;margin:12px 0 6px}.event-card p{font-size:11px;color:var(--muted);margin:0}.event-foot{border-top:1px solid #ffffff18;padding-top:12px;display:flex;justify-content:space-between;gap:8px;font-size:9px;color:#c2ccda;letter-spacing:.8px}
 .site-announcement[hidden],.site-maintenance[hidden]{display:none!important}.site-announcement{background:linear-gradient(90deg,#8e1429,#c91e3b 55%,#7a1125);border-bottom:1px solid #f2dda255;color:#fff}.announcement-inner{max-width:1480px;margin:auto;padding:13px 4%;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.announcement-inner strong{font-size:12px;letter-spacing:.7px;color:#f7dda0}.announcement-inner span{font-size:12px;line-height:1.5}.site-maintenance{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at 50% 0%,#26395b 0%,#080b13 70%);display:grid;place-items:center;padding:24px}.maintenance-card{text-align:center;max-width:560px;border:1px solid #d8b66a66;border-radius:20px;padding:38px 28px;background:linear-gradient(145deg,#17243a,#101827);box-shadow:0 25px 80px #0008}.maintenance-mark{width:68px;height:68px;margin:0 auto 22px;display:grid;place-items:center;background:linear-gradient(145deg,#e51c3a,#811126);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-size:22px;font-weight:1000}.maintenance-card h1{font-size:clamp(26px,6vw,42px);margin:14px 0;color:#f2dda2}.maintenance-card p{color:#b8c2d1;line-height:1.9;font-size:14px}
 .band{background:linear-gradient(90deg,#94122b,#d71936 55%,#741027);padding:30px 0}.bandinner{display:flex;justify-content:space-between;align-items:center;gap:15px}.band h2{font-size:clamp(22px,4vw,36px);margin:6px 0}.band p{font-size:10px;color:#ffe3e7;margin:0}
 .page-hero{padding:48px 0 27px;border-bottom:1px solid #ffffff16;background:radial-gradient(ellipse at 80% 20%,#46172a88,transparent 50%)}.page-hero h1{font-size:clamp(34px,5.5vw,62px);margin:12px 0 6px;letter-spacing:-2px}.page-hero p{color:var(--muted);font-size:12px;margin:0}.content{padding-top:28px;padding-bottom:60px}
@@ -39,8 +39,8 @@ main{min-height:78vh}.page{display:none;animation:fadeIn .35s ease}.page.active{
 .draw-layout{display:grid;grid-template-columns:300px 1fr;gap:14px;align-items:start}.draw-pot{display:grid;grid-template-columns:1fr 1fr;gap:6px}.pot-player{background:#ffffff07;border:1px solid #ffffff10;border-radius:6px;padding:7px;font-size:9px;display:flex;align-items:center;gap:7px}.pot-player.used{opacity:.25;text-decoration:line-through}.draw-machine{min-height:185px;border:1px solid #d8b66a66;border-radius:10px;background:radial-gradient(ellipse at 50% 35%,#512038,#17182a 68%,#0e1421);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;margin:15px 0}.machine-caption{font-size:9px;letter-spacing:3px;color:var(--gold);font-weight:950}.reveal-flag{font-size:40px;min-height:50px;margin:8px 0;display:flex;align-items:center;justify-content:center}.reveal-name{font-size:clamp(18px,3vw,28px);font-weight:1000;text-align:center;padding:0 10px}.reveal-country{font-size:9px;color:#b3bdcc;letter-spacing:2px;margin-top:5px}.machine-hint{font-size:9px;color:#8996aa;margin-top:8px}.spinning .reveal-name{animation:flash .12s linear infinite}.spinning .reveal-flag{animation:flash .16s linear infinite}@keyframes flash{50%{opacity:.4;filter:blur(1px);transform:translateY(3px)}}.progress{height:6px;background:#ffffff16;border-radius:10px;overflow:hidden;margin:15px 0 7px}.progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .4s}.progress-label{display:flex;justify-content:space-between;font-size:9px;color:var(--muted)}.draw-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:13px}.slot{background:#ffffff06;border:1px solid #ffffff15;border-radius:7px;padding:8px;min-height:57px}.slot small{font-size:7px;color:#94a0b3;display:block;margin-bottom:5px}.slot b{font-size:9px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.slot.filled{border-color:#d8b66a77;background:#d8b66a0c;animation:fadeIn .4s}.bracket{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}.bracket-match{background:#0c1423;border:1px solid #ffffff17;border-radius:7px;padding:9px}.bracket-match h4{font-size:8px;color:var(--gold);margin:0 0 7px}.bracket-player{font-size:9px;padding:5px 3px;display:flex;align-items:center;gap:6px}.bracket-player.empty{color:#748197}.pair-flash{animation:glow .8s}@keyframes glow{40%{box-shadow:0 0 24px #d8b66a77;border-color:var(--gold)}}
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.2s;background:var(--gold2);color:#17130d;padding:11px 16px;border-radius:7px;font-size:10px;font-weight:950;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
 footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer-inner{max-width:1480px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-inner b{font-size:11px;letter-spacing:1.5px}.footer-inner p{font-size:9px;color:#8290a3;line-height:1.6;max-width:650px}
-@media(max-width:1000px){.player-grid{grid-template-columns:repeat(3,1fr)}.draw-layout{grid-template-columns:1fr}.hero-art{height:300px}}
-@media(max-width:700px){.nav{flex-wrap:wrap}.menu-btn{display:block}.navlinks{display:none;width:100%;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks button{text-align:left}.brand b{font-size:14px}.hero{grid-template-columns:1fr;padding-top:35px}.hero h1{letter-spacing:-2px}.hero-art{height:240px}.orbit{width:240px}.shuttle{width:160px;height:160px}.statsrow{grid-template-columns:repeat(2,1fr);gap:12px}.stat{border:0;padding:4px 10px}.stat:first-child{padding-left:10px}.cards{grid-template-columns:1fr}.player-grid{grid-template-columns:repeat(2,1fr)}.section{padding:38px 0}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.admin-stats{grid-template-columns:repeat(2,1fr)}.profile-hero{grid-template-columns:90px 1fr;padding:15px}.profile-photo{width:90px;height:110px}.profile-stats{grid-template-columns:repeat(2,1fr);padding:0 15px 15px}.draw-slots{grid-template-columns:repeat(2,1fr)}.bracket{grid-template-columns:1fr}.bandinner{align-items:flex-start;flex-direction:column}.panel{padding:13px}}
+@media(max-width:1000px){.player-grid{grid-template-columns:repeat(3,1fr)}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.draw-layout{grid-template-columns:1fr}.hero-art{height:300px}}
+@media(max-width:700px){.news-grid{grid-template-columns:1fr}.nav{flex-wrap:wrap}.menu-btn{display:block}.navlinks{display:none;width:100%;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks button{text-align:left}.brand b{font-size:14px}.hero{grid-template-columns:1fr;padding-top:35px}.hero h1{letter-spacing:-2px}.hero-art{height:240px}.orbit{width:240px}.shuttle{width:160px;height:160px}.statsrow{grid-template-columns:repeat(2,1fr);gap:12px}.stat{border:0;padding:4px 10px}.stat:first-child{padding-left:10px}.cards{grid-template-columns:1fr}.player-grid{grid-template-columns:repeat(2,1fr)}.section{padding:38px 0}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.admin-stats{grid-template-columns:repeat(2,1fr)}.profile-hero{grid-template-columns:90px 1fr;padding:15px}.profile-photo{width:90px;height:110px}.profile-stats{grid-template-columns:repeat(2,1fr);padding:0 15px 15px}.draw-slots{grid-template-columns:repeat(2,1fr)}.bracket{grid-template-columns:1fr}.bandinner{align-items:flex-start;flex-direction:column}.panel{padding:13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -50,7 +50,7 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
  <a class="brand" href="#" onclick="showPage('home');return false"><div class="brandmark">O</div><div><small>HSBC PRESENTS</small><b>OCEAN WORLD TOUR</b></div></a>
  <button class="menu-btn" id="menuBtn">MENU ☰</button>
  <nav class="navlinks" id="navlinks">
-  <button class="active" data-page="home">HOME</button><button data-page="players">PLAYERS</button><button data-page="tournaments">TOURNAMENTS</button><button data-page="results">MATCH RESULTS</button><button data-page="rankings">RANKINGS</button><button data-page="draw">OFFICIAL DRAW</button><span id="dbStatus" class="badge red db-status" role="status">CONNECTING TO OWT DATABASE</span>
+  <button class="active" data-page="home">HOME</button><button data-page="players">PLAYERS</button><button data-page="tournaments">TOURNAMENTS</button><button data-page="results">MATCH RESULTS</button><button data-page="rankings">RANKINGS</button><button data-page="draw">OFFICIAL DRAW</button><button data-page="news">NEWS</button><span id="dbStatus" class="badge red db-status" role="status">CONNECTING TO OWT DATABASE</span>
  </nav>
 </div></header>
 <div id="siteAnnouncement" class="site-announcement" hidden><div class="announcement-inner"><strong id="announcementTitle"></strong><span id="announcementBody"></span></div></div>
@@ -63,6 +63,7 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
  </div>
  <div class="stats"><div class="container statsrow"><div class="stat"><b id="homeEvents">5</b><small>REGISTERED EVENTS</small></div><div class="stat"><b>4</b><small>TOURNAMENT TIERS</small></div><div class="stat"><b id="homePlayers">16</b><small>ELITE PLAYERS</small></div><div class="stat"><b id="homeChampion">—</b><small>WORLD NO. 1</small></div></div></div>
  <div class="container section"><div class="section-head"><div><small>THE 2027 SEASON</small><h2>FEATURED TOURNAMENTS</h2></div><a class="link" href="#" onclick="showPage('tournaments');return false">VIEW ALL EVENTS ↗</a></div><div class="cards" id="homeEventsGrid"></div></div>
+ <div class="container section"><div class="section-head"><div><small>OFFICIAL UPDATES</small><h2>OWT LATEST NEWS</h2></div><a class="link" href="#" onclick="showPage('news');return false">VIEW ALL NEWS ↗</a></div><div class="news-grid" id="homeNewsGrid"></div></div>
  <div class="band"><div class="container bandinner"><div><p>THE NEXT CHAPTER STARTS HERE</p><h2>THE DRAW IS IN YOUR HANDS.</h2><p>Follow every name. Every match. Every route to the final.</p></div><button class="btn btn-gold" onclick="showPage('draw')">OPEN DRAW CENTER ↗</button></div></div>
 </section>
 
@@ -121,6 +122,11 @@ footer{border-top:1px solid #ffffff18;background:#070a11;padding:25px 4%}.footer
  </div>
 </section>
 
+<section class="page" id="page-news">
+ <div class="page-hero"><div class="container"><div class="kicker">OFFICIAL OWT UPDATES</div><h1>NEWS CENTER</h1><p>Announcements, tournament updates and official results from Ocean World Tour.</p></div></div>
+ <div class="container content"><div class="news-grid" id="newsGrid"></div><p class="hint" id="newsStatus">Loading OWT news…</p></div>
+</section>
+
 </main>
 <footer><div class="footer-inner"><div><b>HSBC OCEAN WORLD TOUR</b><p>ONE TOUR. ONE WORLD. A fan-created digital badminton tournament simulation.</p></div><p>FAN-MADE SIMULATION PROJECT. Not affiliated with, sponsored by, or endorsed by HSBC, BWF, or any real-world tournament organizer. All player and tournament data is for this fictional OWT project.</p></div></footer>
 
@@ -166,7 +172,7 @@ const FINISH_LABELS = {
 const FINISH_ORDER = ["champion","runner_up","semifinal","quarterfinal","round_of_16","round_of_32"];
 const $ = id => document.getElementById(id);
 const DEFAULT_SITE_SETTINGS = {site_enabled:true,show_players:true,show_tournaments:true,show_results:true,show_rankings:true,show_draw:true,announcement_enabled:false,announcement_title:"",announcement_body:""};
-const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], selectedDrawId:"", selectedResultsId:"", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
+const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], news:[], selectedDrawId:"", selectedResultsId:"", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
 let refreshTimer = null;
 
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -225,6 +231,18 @@ function renderHome(){
  $("homeChampion").textContent=top&&top.points?top.player.name.split(" ")[0]:"—";
  $("homeEventsGrid").innerHTML=state.tournaments.slice().sort((a,b)=>(a.date||"9999").localeCompare(b.date||"9999")).slice(0,3).map(eventCard).join("")
   ||'<div class="panel hint">Tournament information will appear here when published by OWT.</div>';
+}
+function newsCard(n){
+ const categories={announcement:"ANNOUNCEMENT",tournament:"TOURNAMENT",results:"MATCH RESULTS",coming_soon:"COMING SOON",general:"OWT NEWS"};
+ const image=safePortrait(n.image_url);
+ return `<article class="news-card">${image?`<img src="${esc(image)}" alt="${esc(n.title)}" loading="lazy">`:''}<div class="news-card-content"><div class="news-category">${n.is_pinned?"📌 ":""}${esc(categories[n.category]||"OWT NEWS")}</div><h3>${esc(n.title)}</h3><p>${esc(n.body)}</p><div class="news-date">${n.published_at?new Date(n.published_at).toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}):"OWT OFFICIAL"}</div></div></article>`;
+}
+function renderNews(){
+ const sorted=state.news.slice().sort((a,b)=>Number(b.is_pinned)-Number(a.is_pinned)||(b.published_at||"").localeCompare(a.published_at||""));
+ const home=$("homeNewsGrid"),all=$("newsGrid");
+ if(home)home.innerHTML=sorted.slice(0,3).map(newsCard).join("")||'<div class="panel hint">No official news published yet.</div>';
+ if(all)all.innerHTML=sorted.map(newsCard).join("")||'<div class="panel hint">No official news published yet.</div>';
+ const status=$("newsStatus");if(status)status.textContent=`${sorted.length} official news item(s)`;
 }
 function renderPlayers(){
  const search=($("playerSearch")?.value||"").toLowerCase();
@@ -358,7 +376,7 @@ function renderAll(){
  const options=Object.keys(COUNTRIES).map(k=>`<option value="${k}">${esc(COUNTRIES[k].name)}</option>`).join("");
  $("countryFilter").innerHTML='<option value="">All countries</option>'+options;
  $("countryFilter").value=oldCountry;
- renderHome();renderPlayers();renderRankings();renderTournaments();renderResults();renderDraw();
+ renderHome();renderNews();renderPlayers();renderRankings();renderTournaments();renderResults();renderDraw();
 }
 function showPage(name){
  const settingKey={players:"show_players",tournaments:"show_tournaments",results:"show_results",rankings:"show_rankings",draw:"show_draw"}[name];
@@ -372,6 +390,7 @@ function showPage(name){
  if(name==="tournaments")renderTournaments();
  if(name==="results")renderResults();
  if(name==="draw")renderDraw();
+ if(name==="news")renderNews();
 }
 document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
 $("menuBtn").addEventListener("click",()=>$("navlinks").classList.toggle("open"));
@@ -415,13 +434,14 @@ async function loadPublicData(options={}){
  if(!options.quiet)showDbStatus("SYNCING OWT DATABASE","loading");
  try{
   await loadSiteSettings();
-  const [players,tournaments,results,matches,draws,drawEntries]=await Promise.all([
+  const [players,tournaments,results,matches,draws,drawEntries,news]=await Promise.all([
    fetchTable("owt_players","id,display_name,country_code,country_name,portrait_url,seed,is_active","seed"),
    fetchTable("owt_tournaments","id,name,tier,event_date,city,country_code,status,draw_locked,results_certified","event_date"),
    fetchTable("owt_tournament_results","id,tournament_id,player_id,finish_code,points_awarded,certified_at"),
    fetchTable("owt_match_results","id,tournament_id,round_code,match_number,player_a,player_b,score_games,winner_id,recorded_at"),
    fetchTable("owt_draws","id,tournament_id,status,locked_at"),
-   fetchTable("owt_draw_entries","id,draw_id,player_id,match_number,slot_number")
+   fetchTable("owt_draw_entries","id,draw_id,player_id,match_number,slot_number"),
+   supabaseClient.from("owt_news").select("id,title,body,category,is_pinned,image_url,published_at").eq("status","published").not("published_at","is",null).lte("published_at",new Date().toISOString()).order("is_pinned",{ascending:false}).order("published_at",{ascending:false}).limit(30).then(({data,error})=>{if(error)throw new Error(`owt_news: ${error.message}`);return data||[]})
   ]);
   state.players=mapPlayers(players);
   state.tournaments=mapTournaments(tournaments);
@@ -429,6 +449,7 @@ async function loadPublicData(options={}){
   state.matches=mapMatches(matches);
   state.draws=mapDraws(draws);
   state.drawEntries=mapDrawEntries(drawEntries);
+  state.news=news||[];
   state.lastUpdated=new Date();
   state.error="";
   renderAll();
@@ -444,6 +465,7 @@ async function loadPublicData(options={}){
   $("tournamentGrid").innerHTML=`<div class="panel hint">Official tournament data is temporarily unavailable.</div>`;
   $("rankingRows").innerHTML=`<tr><td colspan="5" class="hint">Ranking data is temporarily unavailable.</td></tr>`;
   $("matchResultsList").innerHTML=`<div class="panel hint">Match results are temporarily unavailable.</div>`;
+  state.news=[];renderNews();
   $("drawStatus").textContent="Official draw data is temporarily unavailable.";
   $("drawStatusDetail").textContent=state.error;
   if(!options.quiet)toast("OWT database sync failed");
