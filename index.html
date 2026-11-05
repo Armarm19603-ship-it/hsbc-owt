@@ -316,6 +316,89 @@ footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.foot
  .td-media-card img{height:170px}
 }
 
+
+/* ===== OWT MATCH DETAIL PRO — MATCH CENTER DRILL-DOWN ===== */
+#page-match-detail{min-height:82vh;background:linear-gradient(180deg,#080a12 0%,#090b11 55%,#050609 100%);color:#f7f7f8}
+.md-shell{max-width:1120px;margin:0 auto;padding:20px 4% 110px}
+.md-back{display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:#c8cbd2;padding:8px 0 17px;font-size:11px;font-weight:900;letter-spacing:1px}
+.md-back span{font-size:25px;line-height:12px}
+.md-hero{position:relative;overflow:hidden;border:1px solid #ffffff17;border-radius:22px;padding:24px 25px 20px;background:radial-gradient(ellipse at 50% 0%,#263d6a70,transparent 55%),radial-gradient(ellipse at 50% 100%,#7a1d3450,transparent 65%),linear-gradient(145deg,#121827,#080a12 70%);box-shadow:0 22px 60px #0008}
+.md-hero:after{content:"OWT";position:absolute;right:-8px;top:-40px;font-size:clamp(100px,20vw,220px);font-weight:1000;letter-spacing:-13px;color:#ffffff08;pointer-events:none}
+.md-hero-meta{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#aab3c2;font-size:9px;font-weight:900;letter-spacing:1.4px}
+.md-hero-meta .md-live{color:#8ce2b9}
+.md-scoreboard{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,.82fr) minmax(0,1fr);align-items:center;gap:18px;padding:27px 0 18px}
+.md-player{min-width:0;text-align:center}
+.md-avatar{width:116px;height:116px;margin:0 auto 13px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#334b78,#a71d3b);border:4px solid #e0b75d;box-shadow:0 0 0 7px #e0b75d16,0 12px 30px #0009;color:white;font-size:27px;font-weight:1000}
+.md-player.right .md-avatar{border-color:#147be8;box-shadow:0 0 0 7px #147be81b,0 12px 30px #0009}
+.md-avatar img{width:100%;height:100%;object-fit:cover}
+.md-player-name{font-size:clamp(13px,2vw,18px);font-weight:950;line-height:1.25;overflow-wrap:anywhere}
+.md-player-country{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:8px;color:#aeb8c8;font-size:10px}
+.md-player-country .flag{width:22px;height:15px;border-radius:50%}
+.md-player-tag{display:inline-flex;margin-top:9px;padding:5px 9px;border-radius:20px;background:#ffffff0c;border:1px solid #ffffff1c;color:#d9c58e;font-size:8px;font-weight:900;letter-spacing:1px}
+.md-score-stack{display:grid;gap:9px;align-content:center}
+.md-score-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.md-score-chip{min-width:55px;padding:9px 7px;border-radius:13px;text-align:center;background:#55565d;color:#fff;font-size:26px;font-weight:1000;font-variant-numeric:tabular-nums}
+.md-score-chip.won{background:#0879ec;box-shadow:0 7px 22px #0879ec36}
+.md-score-game{color:#8e99ab;font-size:8px;font-weight:900;letter-spacing:1px;text-align:center}
+.md-score-footer{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;padding-top:15px;border-top:1px solid #ffffff16}
+.md-score-footer span{font-size:9px;color:#aeb7c6;font-weight:850;letter-spacing:1px}
+.md-h2h-pill{border:0;border-radius:30px;padding:10px 25px;background:linear-gradient(110deg,#e31e2c,#a90e29);color:#fff;font-size:13px;font-weight:1000;letter-spacing:1px;box-shadow:0 8px 22px #d7193635}
+.md-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:3px;margin:18px 0 20px;padding:4px;background:#f5f5f6;border-radius:12px;overflow:hidden}
+.md-tabs button{border:0;background:transparent;color:#8e2632;padding:14px 8px;font-size:10px;font-weight:900;letter-spacing:.8px}
+.md-tabs button.active{background:#df1e27;color:#fff;box-shadow:0 5px 15px #d7193630}
+.md-panel{min-height:230px}
+.md-panel-title{margin:5px 0 18px;text-align:center;color:#f2f2f4;font-size:14px;font-weight:900;letter-spacing:1.2px}
+.md-stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:17px}
+.md-stat-card{padding:16px 13px;border:1px solid #ffffff13;border-radius:13px;background:linear-gradient(145deg,#171b25,#10131b);text-align:center}
+.md-stat-card small{display:block;color:#9ca5b4;font-size:8px;font-weight:900;letter-spacing:1px}
+.md-stat-card strong{display:block;margin-top:8px;color:#f3d58d;font-size:23px;font-weight:1000;font-variant-numeric:tabular-nums}
+.md-stat-card span{display:block;margin-top:4px;color:#8e98a7;font-size:9px}
+.md-comparison{padding:18px;border:1px solid #ffffff13;border-radius:14px;background:#11151e;margin-bottom:12px}
+.md-comparison h3{margin:0 0 13px;text-align:center;color:#e7e8eb;font-size:11px;letter-spacing:1px}
+.md-compare-labels{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:10px;font-weight:900}
+.md-compare-labels span:first-child{color:#f2c66d}.md-compare-labels span:last-child{color:#1685ff;text-align:right}
+.md-bar{height:12px;display:flex;overflow:hidden;border-radius:20px;background:#252a34}
+.md-bar-a{background:#f2b94b;min-width:0}.md-bar-b{background:#0879ec;min-width:0}
+.md-availability-note{margin-top:12px;padding:12px 14px;border-left:3px solid #d8b66a;border-radius:5px;background:#d8b66a0c;color:#aeb6c4;font-size:10px;line-height:1.7}
+.md-game-detail{max-width:720px;margin:0 auto;padding:22px;border:1px solid #ffffff14;border-radius:16px;background:linear-gradient(145deg,#171c28,#0e121b)}
+.md-game-score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;text-align:center}
+.md-game-score strong{font-size:clamp(40px,8vw,66px);font-weight:1000;font-variant-numeric:tabular-nums}
+.md-game-score .a{color:#f2c66d}.md-game-score .b{color:#1685ff}
+.md-game-score small{display:block;color:#a1a9b7;font-size:9px;letter-spacing:1px}
+.md-game-winner{text-align:center;color:#f2d58e;font-size:10px;font-weight:900;letter-spacing:1.2px;margin:14px 0}
+.md-h2h-list{display:grid;gap:9px}
+.md-h2h-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;padding:13px 15px;border:1px solid #ffffff12;border-radius:11px;background:#131722}
+.md-h2h-row span{font-size:10px;color:#d5d9e0;font-weight:800;overflow-wrap:anywhere}
+.md-h2h-row span:last-child{text-align:right}
+.md-h2h-row b{font-size:10px;color:#f2d58e;text-align:center}
+.md-empty{padding:25px 16px;text-align:center;border:1px dashed #444b58;border-radius:13px;color:#aeb6c4;font-size:11px;line-height:1.7;background:#11151d}
+.md-footnote{margin-top:17px;color:#828d9e;font-size:9px;line-height:1.7;text-align:center}
+.md-match-link{cursor:pointer;transition:border-color .2s,transform .2s}
+.md-match-link:hover,.md-match-link:focus-visible{border-color:#d8b66a99;transform:translateY(-2px);outline:none}
+@media(max-width:650px){
+ .md-shell{padding:12px 4.5% 100px}
+ .md-hero{padding:18px 12px 15px;border-radius:17px}
+ .md-scoreboard{grid-template-columns:minmax(0,1fr) minmax(105px,.8fr) minmax(0,1fr);gap:7px;padding:22px 0 15px}
+ .md-avatar{width:76px;height:76px;border-width:3px;font-size:20px;margin-bottom:10px}
+ .md-player-name{font-size:11px}
+ .md-player-country{font-size:8px;gap:4px;flex-wrap:wrap}
+ .md-player-country .flag{width:18px;height:12px}
+ .md-score-chip{min-width:38px;padding:8px 4px;font-size:20px;border-radius:10px}
+ .md-score-row{gap:4px}
+ .md-score-game{font-size:7px}
+ .md-score-footer{gap:8px}
+ .md-h2h-pill{padding:9px 18px;font-size:11px}
+ .md-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+ .md-tabs button{padding:12px 5px;font-size:9px}
+ .md-stat-grid{grid-template-columns:1fr 1fr}
+ .md-stat-card:last-child{grid-column:1/-1}
+ .md-stat-card strong{font-size:20px}
+ .md-comparison{padding:14px 12px}
+ .md-game-detail{padding:18px 12px}
+ .md-h2h-row{gap:6px;padding:11px 9px}
+ .md-h2h-row span{font-size:9px}
+}
+
 </style>
 </head>
 <body>
@@ -443,6 +526,21 @@ footer{background:#060910;border-top:1px solid #ffffff18;padding:30px 4.2%}.foot
    <div class="td-section-heading"><h2>EVENT <strong>MEDIA</strong></h2><span class="td-muted">NEWS & GALLERY</span></div>
    <div class="td-media-grid" id="tdMediaGrid"></div>
   </section>
+ </div>
+</section>
+
+
+<section class="page" id="page-match-detail">
+ <div class="md-shell">
+  <button class="md-back" type="button" onclick="closeMatchDetail()"><span>‹</span> BACK TO MATCH CENTER</button>
+  <div class="md-hero">
+   <div class="md-hero-meta"><span id="mdTournament">OCEAN WORLD TOUR</span><span id="mdRound">MATCH DETAIL</span><span class="md-live" id="mdStatus">OFFICIAL RESULT</span></div>
+   <div class="md-scoreboard" id="mdScoreboard"></div>
+   <div class="md-score-footer"><span id="mdMatchNo">MATCH —</span><span>·</span><span id="mdDate">DATE TBA</span><button class="md-h2h-pill" type="button" data-match-tab="h2h">H2H</button></div>
+  </div>
+  <div class="md-tabs" id="mdTabs" role="tablist" aria-label="Match statistics tabs"></div>
+  <section class="md-panel" id="mdPanel" aria-live="polite"></section>
+  <p class="md-footnote" id="mdFootnote">Statistics are calculated from official OWT match records currently available.</p>
  </div>
 </section>
 
@@ -581,7 +679,7 @@ const FINISH_LABELS = {
 const FINISH_ORDER = ["champion","runner_up","semifinal","quarterfinal","round_of_16","round_of_32"];
 const $ = id => document.getElementById(id);
 const DEFAULT_SITE_SETTINGS = {site_enabled:true,show_players:true,show_tournaments:true,show_results:true,show_rankings:true,show_draw:true,announcement_enabled:false,announcement_title:"",announcement_body:""};
-const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], news:[], selectedDrawId:"", selectedResultsId:"", selectedMatchRound:"ALL", selectedTournamentId:"", activeTournamentTab:"info", detailMatchDate:"ALL", detailMatchRound:"ALL", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
+const state = {players:[], tournaments:[], results:[], matches:[], draws:[], drawEntries:[], news:[], selectedDrawId:"", selectedResultsId:"", selectedMatchRound:"ALL", selectedTournamentId:"", selectedMatchId:"", matchReturnPage:"results", activeMatchTab:"stats", activeTournamentTab:"info", detailMatchDate:"ALL", detailMatchRound:"ALL", lastUpdated:null, loading:false, error:"", siteSettings:{...DEFAULT_SITE_SETTINGS}};
 let activeRankingCategory = "MS";
 let refreshTimer = null;
 
@@ -599,6 +697,7 @@ function avatarHTML(p,cls="avatar"){
 }
 function playerById(id){return state.players.find(p=>p.id===id);}
 function tournamentById(id){return state.tournaments.find(t=>t.id===id);}
+function matchById(id){return state.matches.find(m=>String(m.id)===String(id));}
 function showDbStatus(message,mode="loading"){
  const el=$("dbStatus"); if(!el)return;
  el.textContent=message;
@@ -651,7 +750,7 @@ function renderHomeMatches(){
   const t=tournamentById(m.tournamentId),a=playerById(m.playerA),b=playerById(m.playerB),winner=playerById(m.winnerId);
   const scores=(Array.isArray(m.scoreGames)?m.scoreGames:[]).map(g=>Array.isArray(g)?`${g[0]}–${g[1]}`:"").filter(Boolean).join(" · ");
   const round={R32:"ROUND OF 32",R16:"ROUND OF 16",QF:"QUARTER-FINAL",SF:"SEMI-FINAL",F:"FINAL"}[m.roundCode]||m.roundCode||"MATCH RESULT";
-  return `<article class="home-match-card"><div class="home-match-meta"><span>${esc(t?.name||"OWT TOURNAMENT")}</span><span>${esc(round)}</span></div><div class="home-match-pair"><div class="home-match-player ${winner?.id===a?.id?"winner":""}">${a?flagBadge(a.countryCode):""}<span class="name">${esc(a?.name||"TBD")}</span></div><div class="home-match-score">${esc(scores||"VS")}<small>${winner?"FINAL SCORE":"RESULT PENDING"}</small></div><div class="home-match-player ${winner?.id===b?.id?"winner":""}"><span class="name">${esc(b?.name||"TBD")}</span>${b?flagBadge(b.countryCode):""}</div></div></article>`;
+  return `<article class="home-match-card md-match-link" data-open-match="${esc(m.id)}" data-match-return="home" role="button" tabindex="0" aria-label="Open match detail"><div class="home-match-meta"><span>${esc(t?.name||"OWT TOURNAMENT")}</span><span>${esc(round)}</span></div><div class="home-match-pair"><div class="home-match-player ${winner?.id===a?.id?"winner":""}">${a?flagBadge(a.countryCode):""}<span class="name">${esc(a?.name||"TBD")}</span></div><div class="home-match-score">${esc(scores||"VS")}<small>${winner?"FINAL SCORE":"RESULT PENDING"}</small></div><div class="home-match-player ${winner?.id===b?.id?"winner":""}"><span class="name">${esc(b?.name||"TBD")}</span>${b?flagBadge(b.countryCode):""}</div></div></article>`;
  }).join("")||'<div class="hint">No match results have been published yet. Official scores will appear here after they are recorded.</div>';
 }
 function renderHomeRanking(){
@@ -828,7 +927,7 @@ function renderTournamentMatches(){
   const row=(p,side)=>`<div class="td-match-row ${winner&&winner.id===p?.id?"winner":""}"><div class="td-match-athlete">${p?flagBadge(p.countryCode):""}<strong>${esc(p?.name||"TBD")}</strong></div><div class="td-match-scores">${games.length?games.map(g=>`<span>${esc(g[side])}</span>`).join(""):'<span>—</span>'}</div></div>`;
   const date=m.recordedAt?new Date(m.recordedAt):null;
   const dateLabel=date&&!Number.isNaN(date.getTime())?date.toLocaleDateString("en-GB",{day:"numeric",month:"short"}):"DATE TBA";
-  return `<article class="td-match-card"><div class="td-match-head"><span>RESULT · ${esc(tournamentById(id)?.name||"OWT EVENT")}</span><span>MATCH ${String(m.matchNumber||0).padStart(2,"0")}</span></div>${row(a,0)}${row(b,1)}<div class="td-match-foot"><span>MS&nbsp; · &nbsp;${esc(tournamentRoundLabel(m.roundCode))} &nbsp;·&nbsp; ${esc(dateLabel)}</span><strong>${winner?"OFFICIAL RESULT":"RESULT RECORDED"}</strong></div></article>`;
+  return `<article class="td-match-card md-match-link" data-open-match="${esc(m.id)}" data-match-return="tournament-detail" role="button" tabindex="0" aria-label="Open match detail"><div class="td-match-head"><span>RESULT · ${esc(tournamentById(id)?.name||"OWT EVENT")}</span><span>MATCH ${String(m.matchNumber||0).padStart(2,"0")}</span></div>${row(a,0)}${row(b,1)}<div class="td-match-foot"><span>MS&nbsp; · &nbsp;${esc(tournamentRoundLabel(m.roundCode))} &nbsp;·&nbsp; ${esc(dateLabel)}</span><strong>${winner?"OFFICIAL RESULT":"RESULT RECORDED"}</strong></div></article>`;
  }).join("")||'<div class="td-empty">No match results have been published for this tournament yet.<br>Official scores will appear here after they are recorded by OWT.</div>';
 }
 function renderTournamentMedia(){
@@ -841,14 +940,133 @@ function renderTournamentMedia(){
  }).join("")||'<div class="td-empty" style="grid-column:1/-1">No media has been published for this tournament yet.<br>Official photos, videos and event news will appear here when added to OWT News Center.</div>';
 }
 function restoreTournamentRoute(){
- const match=location.hash.match(/^#tournament=(.+)$/);
- if(match){
-  const id=decodeURIComponent(match[1]);
+ const matchRoute=location.hash.match(/^#match=(.+)$/);
+ if(matchRoute){
+  const id=decodeURIComponent(matchRoute[1]);
+  if(matchById(id)){state.selectedMatchId=id;state.matchReturnPage=history.state?.matchReturnPage||"results";showPage("match-detail",{fromHistory:true});return;}
+ }
+ const tournamentRoute=location.hash.match(/^#tournament=(.+)$/);
+ if(tournamentRoute){
+  const id=decodeURIComponent(tournamentRoute[1]);
   if(tournamentById(id)){state.selectedTournamentId=id;showPage("tournament-detail",{fromHistory:true});return;}
  }
  const page=location.hash.replace(/^#/,"");
  if(["home","tournaments","players","results","rankings","draw","news"].includes(page))showPage(page,{fromHistory:true});
  else if(!page)showPage("home",{fromHistory:true});
+}
+
+
+function openMatch(id,returnPage="results"){
+ const m=matchById(id);
+ if(!m){toast("Match details are not available yet");return;}
+ state.selectedMatchId=m.id;
+ state.matchReturnPage=["home","results","tournament-detail"].includes(returnPage)?returnPage:"results";
+ state.activeMatchTab="stats";
+ if(state.matchReturnPage==="tournament-detail")state.selectedTournamentId=m.tournamentId;
+ history.pushState({owtPage:"match-detail",matchId:m.id,matchReturnPage:state.matchReturnPage},"",`#match=${encodeURIComponent(m.id)}`);
+ showPage("match-detail",{fromHistory:true});
+}
+function closeMatchDetail(){
+ const back=state.matchReturnPage||"results";
+ if(back==="tournament-detail"&&tournamentById(state.selectedTournamentId)){
+  history.pushState({owtPage:"tournament-detail",tournamentId:state.selectedTournamentId},"",`#tournament=${encodeURIComponent(state.selectedTournamentId)}`);
+  showPage("tournament-detail",{fromHistory:true});
+ }else{
+  history.pushState({owtPage:back},"",`#${back}`);
+  showPage(back,{fromHistory:true});
+ }
+}
+function matchRoundName(code){
+ return {R32:"ROUND OF 32",R16:"ROUND OF 16",QF:"QUARTER-FINAL",SF:"SEMI-FINAL",F:"FINAL"}[code]||String(code||"MATCH").toUpperCase();
+}
+function matchTotals(m){
+ const games=Array.isArray(m.scoreGames)?m.scoreGames.filter(g=>Array.isArray(g)&&g.length>=2):[];
+ return games.reduce((out,g)=>{
+  const a=Number(g[0])||0,b=Number(g[1])||0;
+  out.pointsA+=a;out.pointsB+=b;
+  if(a>b)out.gamesA++;else if(b>a)out.gamesB++;
+  return out;
+ },{games,pointsA:0,pointsB:0,gamesA:0,gamesB:0});
+}
+function matchPlayerMarkup(p,side,isWinner){
+ const photo=safePortrait(p?.portrait||"");
+ const name=p?.name||"TO BE CONFIRMED";
+ return `<div class="md-player ${side}">
+  <div class="md-avatar">${photo?`<img src="${esc(photo)}" alt="${esc(name)}" onerror="this.parentNode.textContent='${esc(initials(name))}'">`:esc(initials(name))}</div>
+  <div class="md-player-name">${esc(name)}</div>
+  <div class="md-player-country">${p?flagBadge(p.countryCode):""}<span>${esc(countryName(p?.countryCode,p?.countryName))}</span></div>
+  <span class="md-player-tag">${isWinner?"MATCH WINNER":side==="left"?"PLAYER A":"PLAYER B"}</span>
+ </div>`;
+}
+function getHeadToHead(m){
+ const records=state.matches.filter(x=>
+  (x.playerA===m.playerA&&x.playerB===m.playerB)||(x.playerA===m.playerB&&x.playerB===m.playerA)
+ ).sort((a,b)=>(b.recordedAt||"").localeCompare(a.recordedAt||""));
+ const aWins=records.filter(x=>x.winnerId===m.playerA).length;
+ const bWins=records.filter(x=>x.winnerId===m.playerB).length;
+ return {records,aWins,bWins};
+}
+function renderMatchDetail(){
+ const m=matchById(state.selectedMatchId);if(!m)return;
+ const t=tournamentById(m.tournamentId),a=playerById(m.playerA),b=playerById(m.playerB),winner=playerById(m.winnerId);
+ const totals=matchTotals(m),games=totals.games;
+ const recorded=m.recordedAt?new Date(m.recordedAt):null;
+ const dateLabel=recorded&&!Number.isNaN(recorded.getTime())?recorded.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}):"DATE TBA";
+ const h2h=getHeadToHead(m);
+ $("mdTournament").textContent=t?.name||"OCEAN WORLD TOUR";
+ $("mdRound").textContent=matchRoundName(m.roundCode);
+ $("mdStatus").textContent=winner?"OFFICIAL RESULT":"RESULT PENDING";
+ $("mdMatchNo").textContent=`MATCH ${String(m.matchNumber||0).padStart(2,"0")}`;
+ $("mdDate").textContent=dateLabel;
+ $("mdScoreboard").innerHTML=matchPlayerMarkup(a,"left",!!winner&&winner.id===m.playerA)+
+  `<div class="md-score-stack">${games.length?games.map((g,i)=>`<div class="md-score-row"><span class="md-score-chip ${Number(g[0])>Number(g[1])?"won":""}">${esc(g[0])}</span><span class="md-score-game">GAME ${i+1}</span><span class="md-score-chip ${Number(g[1])>Number(g[0])?"won":""}">${esc(g[1])}</span></div>`).join(""):'<div class="md-empty">SCORE NOT PUBLISHED</div>'}</div>`+
+  matchPlayerMarkup(b,"right",!!winner&&winner.id===m.playerB);
+ $("mdTabs").innerHTML=`<button type="button" data-match-tab="stats" class="${state.activeMatchTab==="stats"?"active":""}">MATCH STATS</button>`+
+  games.map((g,i)=>`<button type="button" data-match-tab="game-${i}" class="${state.activeMatchTab===`game-${i}`?"active":""}">GAME ${i+1}</button>`).join("")+
+  `<button type="button" data-match-tab="h2h" class="${state.activeMatchTab==="h2h"?"active":""}">HEAD TO HEAD</button>`;
+ $("mdFootnote").textContent="OWT match detail · Scores and derived statistics are based only on records currently stored in the OWT database.";
+ renderMatchPanel(state.activeMatchTab,m,totals,h2h,a,b,winner);
+}
+function renderMatchPanel(tab,m,totals,h2h,a,b,winner){
+ const root=$("mdPanel");if(!root)return;
+ if(tab==="stats"){
+  const total=totals.pointsA+totals.pointsB;
+  const pctA=total?totals.pointsA/total*100:50,pctB=100-pctA;
+  root.innerHTML=`<h2 class="md-panel-title">MATCH STATISTICS</h2>
+   <div class="md-stat-grid">
+    <article class="md-stat-card"><small>GAMES WON</small><strong>${totals.gamesA} – ${totals.gamesB}</strong><span>${totals.games.length} game(s) recorded</span></article>
+    <article class="md-stat-card"><small>TOTAL POINTS</small><strong>${totals.pointsA} – ${totals.pointsB}</strong><span>Sum of published game scores</span></article>
+    <article class="md-stat-card"><small>OWT H2H WINS</small><strong>${h2h.aWins} – ${h2h.bWins}</strong><span>${h2h.records.length} recorded meeting(s)</span></article>
+   </div>
+   <div class="md-comparison"><h3>TOTAL POINTS SCORED</h3><div class="md-compare-labels"><span>${esc(a?.name||"PLAYER A")} · ${totals.pointsA}</span><span>${esc(b?.name||"PLAYER B")} · ${totals.pointsB}</span></div><div class="md-bar"><div class="md-bar-a" style="width:${pctA}%"></div><div class="md-bar-b" style="width:${pctB}%"></div></div></div>
+   <div class="md-availability-note"><b>POINT-BY-POINT STATISTICS</b><br>Most consecutive points and game points are not available in the current OWT match database. This page does not estimate or invent those figures.</div>`;
+ }else if(tab==="h2h"){
+  const rows=h2h.records.map(x=>{
+   const xA=playerById(x.playerA),xB=playerById(x.playerB),event=tournamentById(x.tournamentId);
+   const score=(Array.isArray(x.scoreGames)?x.scoreGames:[]).map(g=>Array.isArray(g)?(x.playerA===m.playerA?`${g[0]}–${g[1]}`:`${g[1]}–${g[0]}`):"").join(" · ")||"—";
+   const date=x.recordedAt?new Date(x.recordedAt):null;
+   const dt=date&&!Number.isNaN(date.getTime())?date.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}):"DATE TBA";
+   const nameA=xA?.name||"PLAYER A",nameB=xB?.name||"PLAYER B";
+   const left=x.playerA===m.playerA?nameA:nameB,right=x.playerA===m.playerA?nameB:nameA;
+   return `<div class="md-h2h-row"><span>${esc(left)}</span><b>${esc(score)}</b><span>${esc(right)}<small style="display:block;color:#858f9e;font-weight:500;margin-top:4px">${esc(event?.name||"OWT EVENT")} · ${esc(dt)}</small></span></div>`;
+  }).join("");
+  root.innerHTML=`<h2 class="md-panel-title">HEAD-TO-HEAD · OWT RECORDS</h2><div class="md-stat-grid"><article class="md-stat-card"><small>${esc(a?.name||"PLAYER A")} WINS</small><strong>${h2h.aWins}</strong></article><article class="md-stat-card"><small>${esc(b?.name||"PLAYER B")} WINS</small><strong>${h2h.bWins}</strong></article><article class="md-stat-card"><small>MEETINGS</small><strong>${h2h.records.length}</strong></article></div><div class="md-h2h-list">${rows||'<div class="md-empty">No head-to-head records are available for these players.</div>'}</div>`;
+ }else if(tab.startsWith("game-")){
+  const index=Number(tab.split("-")[1]),g=totals.games[index];
+  if(!g){root.innerHTML='<div class="md-empty">Game score is not available.</div>';return;}
+  const scoreA=Number(g[0])||0,scoreB=Number(g[1])||0,sum=scoreA+scoreB;
+  const pctA=sum?scoreA/sum*100:50,pctB=100-pctA;
+  const gameWinner=scoreA===scoreB?"":scoreA>scoreB?(a?.name||"PLAYER A"):(b?.name||"PLAYER B");
+  root.innerHTML=`<h2 class="md-panel-title">GAME ${index+1} · SCORE DETAIL</h2><div class="md-game-detail"><div class="md-game-score"><div><strong class="a">${esc(scoreA)}</strong><small>${esc(a?.name||"PLAYER A")}</small></div><div style="color:#9299a5;font-size:11px;font-weight:900">VS</div><div><strong class="b">${esc(scoreB)}</strong><small>${esc(b?.name||"PLAYER B")}</small></div></div><div class="md-game-winner">${gameWinner?`GAME WINNER · ${esc(gameWinner)}`:"GAME RESULT TIED"}</div><div class="md-bar"><div class="md-bar-a" style="width:${pctA}%"></div><div class="md-bar-b" style="width:${pctB}%"></div></div><div class="md-compare-labels" style="margin:10px 0 0"><span>${pctA.toFixed(1)}%</span><span>${pctB.toFixed(1)}%</span></div></div><div class="md-availability-note">The OWT database stores the final score for this game. Rally sequence and point-by-point momentum are not currently stored.</div>`;
+ }
+}
+function switchMatchTab(tab){
+ const m=matchById(state.selectedMatchId);if(!m)return;
+ state.activeMatchTab=tab;
+ const totals=matchTotals(m),h2h=getHeadToHead(m);
+ renderMatchDetail();
+ renderMatchPanel(tab,m,totals,h2h,playerById(m.playerA),playerById(m.playerB),playerById(m.winnerId));
+ $("mdTabs").querySelectorAll("[data-match-tab]").forEach(btn=>btn.classList.toggle("active",btn.dataset.matchTab===tab));
 }
 
 function renderResults(){
@@ -887,7 +1105,7 @@ function renderResults(){
   const recorded=m.recordedAt?new Date(m.recordedAt):null;
   const recordedLabel=recorded&&!Number.isNaN(recorded.getTime())
    ?recorded.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}):"OWT OFFICIAL";
-  return `<article class="owt-match-card">
+  return `<article class="owt-match-card md-match-link" data-open-match="${esc(m.id)}" data-match-return="results" role="button" tabindex="0" aria-label="Open match detail">
    <div class="owt-match-head"><span class="owt-match-event">${esc(t?.name||"OCEAN WORLD TOUR")} · ${t?.tier?`ULTRA ${esc(t.tier)}`:"OWT"}</span><span class="owt-match-number">MATCH ${String(m.matchNumber||0).padStart(2,"0")}</span></div>
    <div class="owt-match-games">${playerRow(a,0)}${playerRow(b,1)}</div>
    <div class="owt-match-foot"><span>MS&nbsp; · &nbsp;${esc(round)} · ${esc(recordedLabel)}</span><strong>${winner?"OFFICIAL RESULT":"SCORE ON FILE"}</strong></div>
@@ -985,10 +1203,10 @@ function showPage(name,options={}){
  const settingKey={players:"show_players",tournaments:"show_tournaments",results:"show_results",rankings:"show_rankings",draw:"show_draw"}[settingName];
  if(settingKey && state.siteSettings[settingKey]===false){name="home";}
  if(!options.fromHistory){
-  const hash=name==="tournament-detail"?`#tournament=${encodeURIComponent(state.selectedTournamentId)}`:`#${name}`;
+  const hash=name==="tournament-detail"?`#tournament=${encodeURIComponent(state.selectedTournamentId)}`:name==="match-detail"?`#match=${encodeURIComponent(state.selectedMatchId)}`:`#${name}`;
   history.replaceState({owtPage:name,tournamentId:state.selectedTournamentId||""},"",hash);
  }
- const activeNav=name==="tournament-detail"?"tournaments":name;
+ const activeNav=name==="tournament-detail"?"tournaments":name==="match-detail"?(state.matchReturnPage==="tournament-detail"?"tournaments":"results"):name;
  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+name));
  document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===activeNav));
  document.querySelectorAll("[data-bottom-page]").forEach(b=>b.classList.toggle("active",b.dataset.bottomPage===activeNav));
@@ -998,6 +1216,7 @@ function showPage(name,options={}){
  if(name==="rankings")renderRankings();
  if(name==="tournaments")renderTournaments();
  if(name==="tournament-detail")renderTournamentDetail();
+ if(name==="match-detail")renderMatchDetail();
  if(name==="results")renderResults();
  if(name==="draw")renderDraw();
  if(name==="news")renderNews();
@@ -1007,6 +1226,10 @@ document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",(
  showPage(b.dataset.page);
 }));
 document.addEventListener("click",e=>{
+ const matchCard=e.target.closest("[data-open-match]");
+ if(matchCard){openMatch(matchCard.dataset.openMatch,matchCard.dataset.matchReturn||"results");return;}
+ const matchTab=e.target.closest("[data-match-tab]");
+ if(matchTab){switchMatchTab(matchTab.dataset.matchTab);return;}
  const card=e.target.closest("[data-open-tournament]");
  if(card){openTournament(card.dataset.openTournament);return;}
  const tab=e.target.closest("[data-tournament-tab]");
@@ -1017,6 +1240,8 @@ document.addEventListener("click",e=>{
  if(round){state.detailMatchRound=round.dataset.detailRound||"ALL";renderTournamentMatches();return;}
 });
 document.addEventListener("keydown",e=>{
+ const matchCard=e.target.closest?.("[data-open-match]");
+ if(matchCard&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openMatch(matchCard.dataset.openMatch,matchCard.dataset.matchReturn||"results");return;}
  const card=e.target.closest?.("[data-open-tournament]");
  if(card&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openTournament(card.dataset.openTournament);}
 });
